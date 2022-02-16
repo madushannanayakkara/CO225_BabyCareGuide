@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BabyDevelopmentTrackingSystem">
         <activity
+            android:name=".RegisterForm"
+            android:exported="false" />
+        <activity
             android:name=".settings"
             android:exported="false" />
         <activity
