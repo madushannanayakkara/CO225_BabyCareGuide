@@ -1,3 +1,61 @@
 <resources>
     <string name="app_name">Baby Development Tracking System</string>
+
+
+    <string name="col1">Age</string>
+    <string name="col2">Vaccine</string>
+    <string name="col3">Remarks</string>
+
+    <string name="r12">DURING THE FIRST YEAR</string>
+
+    <string name="r2c1">0\-4 weeks</string>
+    <string name="r2c2">BCG</string>
+    <string name="r2c3">Before leaving hospital, preferably within 24 hours of birth.If a scar is not present 2nd dose could be offered after 6months, up to 5 years.</string>
+
+    <string name="r3c1">2nd Month</string>
+    <string name="r3c2">OPV and Pentavalent (DTP\-HepB\-Hib)(1st dose),fIPV (Fractional IPV) (1st dose)</string>
+    <string name="r3c3">For a defaulter or for an un-immunized child minimum of 6\-8 weeks gap between doses is adequate</string>
+
+    <string name="r4c1">4th Month</string>
+    <string name="r4c2">OPV and Pentavalent (DTP\-HepB\-Hib)(2nd dose),fIPV (Fractional IPV) (2nd dose)</string>
+    <string name="r4c3">Preferably 6\-8 weeks after 1st dose</string>
+
+    <string name="r5c1">6th Month</string>
+    <string name="r5c2">OPV and Pentavalent (DTP\-HepB\-Hib) (3rd dose)</string>
+    <string name="r5c3">Preferably 6\-8 weeks after 2nd dose</string>
+
+    <string name="r6c1">9th Month</string>
+    <string name="r6c2">MMR ( 1st Dose )</string>
+    <string name="r6c3">On completion of 9 months</string>
+
+    <string name="r22">DURING THE SECOND YEAR</string>
+
+    <string name="r7c1">At 12 months</string>
+    <string name="r7c2">A dose of Live JE Vaccine</string>
+    <string name="r7c3">On completion of 1st year</string>
+
+    <string name="r8c1">At 18 months</string>
+    <string name="r8c2">OPV and DTP (4th dose)</string>
+    <string name="r8c3">On completion of 18th month</string>
+
+    <string name="r32">PRE SCHOOL GOING AGE</string>
+
+    <string name="r9c1">At 3 years</string>
+    <string name="r9c2">MMR (2nd Dose)</string>
+    <string name="r9c3">On completion of 3rd year</string>
+
+    <string name="r42">SCHOOL GOING AGE</string>
+
+    <string name="r10c1">At 3 years</string>
+    <string name="r10c2">MMR (2nd Dose)</string>
+    <string name="r10c3">On completion of 3rd year</string>
+
+    <string name="r11c1">At 5 years</string>
+    <string name="r11c2">OPV and DT (5th dose)</string>
+    <string name="r11c3">On completion of 5th year</string>
+
+    <string name="dateHint">DD/MM/YY</string>
+
+    <string name="firstDay">Enter the date of First Vaccination</string>
+    <string name="nextDay">Next day of vaccination</string>
 </resources>
