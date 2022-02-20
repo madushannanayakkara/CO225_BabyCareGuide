@@ -49,4 +49,11 @@ public class Vaccination extends AppCompatActivity {
         });
 
     }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        overridePendingTransition(0, 0);
+    }
+
 }

@@ -5,16 +5,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private BottomNavigationView bottomNav;
     private Button btnDetails, btnVaccination, btnBMI, btnSettings;
+    private TextView txtv_title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +68,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
+        txtv_title = (TextView) findViewById(R.id.txtv_title);
+        txtv_title.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(MainActivity.this, R.style.BottomSheetDialogTheme);
+                View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(
+                                R.layout.layout_bottom_sheet_acc_list,
+                                (LinearLayout) findViewById(R.id.bottomSheetContainer)
+                );
+                bottomSheetView.findViewById(R.id.btnAddAccount).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        startActivity(new Intent(getApplicationContext(), RegisterForm.class));
+                        overridePendingTransition(0, 0);
+                        bottomSheetDialog.dismiss();
+                    }
+                });
+                bottomSheetDialog.setContentView(bottomSheetView);
+                bottomSheetDialog.show();
+            }
+        });
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        startActivity(intent);
     }
 
     @Override
