@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
         <entry key="..\:/AndroifCreations/JavaProject-main/JavaProject-main/app/src/main/res/layout/activity_register_form.xml" value="0.25" />
+=======
+>>>>>>> main
         <entry key="..\:/Studies/Android Studio/BabyDevelopmentTrackingSystem/app/src/main/res/drawable-anydpi/ic_bmi.xml" value="0.2645" />
         <entry key="..\:/Studies/Android Studio/BabyDevelopmentTrackingSystem/app/src/main/res/drawable-anydpi/ic_details.xml" value="0.2645" />
         <entry key="..\:/Studies/Android Studio/BabyDevelopmentTrackingSystem/app/src/main/res/drawable-anydpi/ic_drop_down.xml" value="0.2605" />
