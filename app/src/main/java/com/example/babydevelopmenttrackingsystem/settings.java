@@ -71,4 +71,15 @@ public class settings extends AppCompatActivity implements AdapterView.OnItemSel
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
+
 }
+
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        overridePendingTransition(0, 0);
+    }
+
+}
+

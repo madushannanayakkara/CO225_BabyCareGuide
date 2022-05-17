@@ -3,15 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
+        <entry key="..\:/AndroifCreations/JavaProject-main/JavaProject-main/app/src/main/res/layout/activity_register_form.xml" value="0.25" />
+=======
+>>>>>>> main
         <entry key="..\:/Studies/Android Studio/BabyDevelopmentTrackingSystem/app/src/main/res/drawable-anydpi/ic_bmi.xml" value="0.2645" />
         <entry key="..\:/Studies/Android Studio/BabyDevelopmentTrackingSystem/app/src/main/res/drawable-anydpi/ic_details.xml" value="0.2645" />
         <entry key="..\:/Studies/Android Studio/BabyDevelopmentTrackingSystem/app/src/main/res/drawable-anydpi/ic_drop_down.xml" value="0.2605" />
         <entry key="..\:/Studies/Android Studio/BabyDevelopmentTrackingSystem/app/src/main/res/drawable-anydpi/ic_settings.xml" value="0.2645" />
         <entry key="..\:/Studies/Android Studio/BabyDevelopmentTrackingSystem/app/src/main/res/drawable-anydpi/ic_title.xml" value="0.2605" />
         <entry key="..\:/Studies/Android Studio/BabyDevelopmentTrackingSystem/app/src/main/res/drawable-anydpi/ic_vaccination.xml" value="0.2645" />
+        <entry key="..\:/Studies/Android Studio/BabyDevelopmentTrackingSystem/app/src/main/res/drawable/bottom_sheet_acc_list.xml" value="0.2635" />
+        <entry key="..\:/Studies/Android Studio/BabyDevelopmentTrackingSystem/app/src/main/res/drawable/button_add_acc.xml" value="0.2635" />
         <entry key="..\:/Studies/Android Studio/BabyDevelopmentTrackingSystem/app/src/main/res/drawable/button_shape.xml" value="0.2645" />
         <entry key="..\:/Studies/Android Studio/BabyDevelopmentTrackingSystem/app/src/main/res/drawable/custom_btn_details.xml" value="0.2495" />
         <entry key="..\:/Studies/Android Studio/BabyDevelopmentTrackingSystem/app/src/main/res/drawable/custom_button.xml" value="0.2495" />
+        <entry key="..\:/Studies/Android Studio/BabyDevelopmentTrackingSystem/app/src/main/res/drawable/ic_add_acc.xml" value="0.2635" />
         <entry key="..\:/Studies/Android Studio/BabyDevelopmentTrackingSystem/app/src/main/res/drawable/ic_home.xml" value="0.2605" />
         <entry key="..\:/Studies/Android Studio/BabyDevelopmentTrackingSystem/app/src/main/res/drawable/ic_nav_bmi.xml" value="0.2605" />
         <entry key="..\:/Studies/Android Studio/BabyDevelopmentTrackingSystem/app/src/main/res/drawable/ic_nav_details.xml" value="0.2605" />
@@ -26,7 +33,7 @@
         <entry key="..\:/Studies/Android Studio/BabyDevelopmentTrackingSystem/app/src/main/res/font/simonetta_regular.xml" value="0.28958333333333336" />
         <entry key="..\:/Studies/Android Studio/BabyDevelopmentTrackingSystem/app/src/main/res/layout/activity_bmi.xml" value="0.259375" />
         <entry key="..\:/Studies/Android Studio/BabyDevelopmentTrackingSystem/app/src/main/res/layout/activity_details.xml" value="0.259375" />
-        <entry key="..\:/Studies/Android Studio/BabyDevelopmentTrackingSystem/app/src/main/res/layout/activity_main.xml" value="0.259375" />
+        <entry key="..\:/Studies/Android Studio/BabyDevelopmentTrackingSystem/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Studies/Android Studio/BabyDevelopmentTrackingSystem/app/src/main/res/layout/activity_register_form.xml" value="0.259375" />
         <entry key="..\:/Studies/Android Studio/BabyDevelopmentTrackingSystem/app/src/main/res/layout/activity_settings.xml" value="0.259375" />
         <entry key="..\:/Studies/Android Studio/BabyDevelopmentTrackingSystem/app/src/main/res/layout/activity_vaccination.xml" value="0.259375" />
@@ -35,6 +42,7 @@
         <entry key="..\:/Studies/Android Studio/BabyDevelopmentTrackingSystem/app/src/main/res/layout/fragment_home.xml" value="0.259375" />
         <entry key="..\:/Studies/Android Studio/BabyDevelopmentTrackingSystem/app/src/main/res/layout/fragment_settings.xml" value="0.259375" />
         <entry key="..\:/Studies/Android Studio/BabyDevelopmentTrackingSystem/app/src/main/res/layout/fragment_vaccination.xml" value="0.259375" />
+        <entry key="..\:/Studies/Android Studio/BabyDevelopmentTrackingSystem/app/src/main/res/layout/layout_bottom_sheet_acc_list.xml" value="0.259375" />
         <entry key="..\:/Studies/Android Studio/BabyDevelopmentTrackingSystem/app/src/main/res/menu/bottom_navigation.xml" value="0.259375" />
       </map>
     </option>
