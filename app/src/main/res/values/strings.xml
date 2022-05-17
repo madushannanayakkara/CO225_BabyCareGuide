@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Baby Development Tracking System</string>
 
-
+    <string name="col0">Done</string>
     <string name="col1">Age</string>
     <string name="col2">Vaccine</string>
     <string name="col3">Remarks</string>
@@ -56,6 +56,22 @@
 
     <string name="dateHint">DD/MM/YY</string>
 
-    <string name="firstDay">Enter the date of First Vaccination</string>
-    <string name="nextDay">Next day of vaccination</string>
+    <string name="nextDay">Next Vaccination Date</string>
+    <string name="vacname">Last vaccination name</string>
+    <string name="button">Calculate</string>
+
+    <string name="remider">Reminder period</string>
+    <string name="notification">Notification</string>
+    <string name="save">Save Changes</string>
+
+    <string-array name="timePeriods">
+        <item>3 hours</item>
+        <item>1 day</item>
+        <item>2 days</item>
+        <item>3 days</item>
+        <item>1 week</item>
+        <item>never</item>
+    </string-array>
+
+
 </resources>

@@ -6,10 +6,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class settings extends AppCompatActivity {
+public class settings extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private BottomNavigationView bottomNav;
 
     @Override
@@ -47,6 +52,23 @@ public class settings extends AppCompatActivity {
                 return false;
             }
         });
+
+        Spinner spinner = findViewById(R.id.spinner1);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.timePeriods, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
+
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+        String text = adapterView.getItemAtPosition(position).toString();
+        Toast.makeText(adapterView.getContext(),text,Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
 }
