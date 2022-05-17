@@ -68,8 +68,25 @@ public class RegisterForm extends AppCompatActivity implements View.OnClickListe
         })
         ;
 
-        btnRegister.setOnClickListener(this);
+//        btnRegister.setOnClickListener(this);
 
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View view) {
+                if (validateData()) {
+                    showSnackBar();
+
+                    DatabaseH myDB = new DatabaseH(RegisterForm.this);
+                    myDB.addBaby(txtFirstName.getText().toString().trim(),
+                            txtLastName.getText().toString().trim(),
+                            txtBirthdate.getText().toString().trim(),
+                            Integer.valueOf(txtCurrentWeight.getText().toString().trim()),
+                            Integer.valueOf(txtCurrentHeight.getText().toString().trim()));
+                }
+            }
+        });
 
     }
 
