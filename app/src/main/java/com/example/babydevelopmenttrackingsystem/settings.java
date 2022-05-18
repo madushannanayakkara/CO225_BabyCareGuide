@@ -72,8 +72,6 @@ public class settings extends AppCompatActivity implements AdapterView.OnItemSel
 
     }
 
-}
-
 
     @Override
     public void onBackPressed() {

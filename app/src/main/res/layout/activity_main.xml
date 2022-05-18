@@ -31,7 +31,7 @@
                 android:drawableEnd="@drawable/ic_drop_down"
                 android:drawablePadding="5dp"
                 android:fontFamily="@font/goldman"
-                android:text="Amelia"
+                android:text="Account"
                 android:textColor="#515151"
                 android:textFontWeight="900"
                 android:textSize="22dp" />
@@ -72,20 +72,20 @@
                     android:id="@+id/btnVaccination"
                     android:layout_width="170dp"
                     android:layout_height="200dp"
-                    android:text="Vaccination"
-                    android:textAllCaps="false"
-                    tools:layout_editor_absoluteX="236dp"
-                    tools:layout_editor_absoluteY="181dp"
                     android:layout_toRightOf="@+id/btnDetails"
                     android:background="@drawable/button_shape"
                     android:backgroundTint="#FF69B4"
-                    android:textColor="#ffffff"
-                    android:textSize="22dp"
-                    android:fontFamily="@font/anton"
-                    android:textFontWeight="900"
                     android:drawableTop="@drawable/ic_vaccination"
+                    android:fontFamily="@font/anton"
                     android:paddingTop="20dp"
-                    android:paddingBottom="30dp"/>
+                    android:paddingBottom="30dp"
+                    android:text="Vaccination"
+                    android:textAllCaps="false"
+                    android:textColor="#ffffff"
+                    android:textFontWeight="900"
+                    android:textSize="22dp"
+                    tools:layout_editor_absoluteX="236dp"
+                    tools:layout_editor_absoluteY="181dp" />
 
                 <Button
                     android:id="@+id/btnSettings"

@@ -11,12 +11,106 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/bottom_navigator">
 
-        <TextView
+        <RelativeLayout
+            android:id="@+id/pnlInput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="BMI"
-            android:textSize="30dp"/>
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="35dp">
+
+            <TextView
+                android:id="@+id/txtHeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="33dp"
+                android:text="Height"
+                android:textSize="22dp" />
+
+            <EditText
+                android:id="@+id/etxtHeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/txtHeight"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Enter current height"
+                android:inputType="textPersonName"
+                android:textSize="22dp" />
+
+            <TextView
+                android:id="@+id/txtWeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtHeight"
+                android:layout_marginTop="46dp"
+                android:layout_marginRight="30dp"
+                android:text="Weight"
+                android:textSize="22dp" />
+
+            <EditText
+                android:id="@+id/etxtWeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etxtHeight"
+                android:layout_marginTop="25dp"
+                android:layout_toRightOf="@+id/txtWeight"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Enter current Weight"
+                android:inputType="textPersonName"
+                android:textSize="22dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pnlInput"
+            android:layout_marginTop="60dp">
+
+            <TextView
+                android:id="@+id/txtBMIValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginRight="30dp"
+                android:text="BMI Value"
+                android:textSize="22dp" />
+
+            <TextView
+                android:id="@+id/txtBMIValueDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtBMIValue"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="30dp"
+                android:gravity="center"
+                android:hint="25"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/txtLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtBMIValueDisplay"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginRight="30dp"
+                android:gravity="center"
+                android:text="Within the standard rate or not"
+                android:textSize="22dp" />
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_below="@+id/txtLabel"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/highlightgreen" />
+
+        </RelativeLayout>
 
     </RelativeLayout>
 
