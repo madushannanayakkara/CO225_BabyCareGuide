@@ -2,8 +2,11 @@ package com.example.babydevelopmenttrackingsystem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -17,10 +20,17 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.navigation.NavigationBarView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private BottomNavigationView bottomNav;
     private Button btnDetails, btnVaccination, btnBMI, btnSettings;
     private TextView txtv_title;
+    private RecyclerView recylerview;
+
+    DatabaseH dh;
+    ArrayList<String> fname, lname;
+    CustomAdpter customAdpter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 R.layout.layout_bottom_sheet_acc_list,
                                 (LinearLayout) findViewById(R.id.bottomSheetContainer)
                 );
+
                 bottomSheetView.findViewById(R.id.btnAddAccount).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -85,6 +96,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         bottomSheetDialog.dismiss();
                     }
                 });
+
+                recylerview = bottomSheetView.findViewById(R.id.recyclerview);
+                dh = new DatabaseH(MainActivity.this);
+                fname = new ArrayList<>();
+                lname = new ArrayList<>();
+
+                storeAccDataArrays();
+
+                customAdpter = new CustomAdpter(MainActivity.this, fname, lname, dh);
+                recylerview.setAdapter(customAdpter);
+                recylerview.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+
                 bottomSheetDialog.setContentView(bottomSheetView);
                 bottomSheetDialog.show();
             }
@@ -122,4 +145,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
+
+    void storeAccDataArrays(){
+        Cursor cursor = dh.readAccounts();
+        if(cursor.getCount() == 0){
+            startActivity(new Intent(getApplicationContext(), RegisterForm.class));
+            overridePendingTransition(0, 0);
+            Toast.makeText(this, "Welcome to BabyCareGuide, Add a new Account!", Toast.LENGTH_LONG).show();
+        } else {
+            while(cursor.moveToNext()){
+                fname.add(cursor.getString(0));
+                lname.add(cursor.getString(1));
+            }
+        }
+    }
+
 }

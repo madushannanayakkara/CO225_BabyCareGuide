@@ -21,43 +21,12 @@
         android:id="@+id/ll_acc_list_show"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:padding="10dp"
         android:orientation="vertical">
 
-        <Button
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_shape"
-            android:backgroundTint="@color/white"
-            android:paddingLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:text="Madushan"
-            android:gravity="left|center"
-            android:shadowColor="@color/black" />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_shape"
-            android:paddingLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:text="Thakshila"
-            android:gravity="left|center"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_shape"
-            android:paddingLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:text="Muthuni"
-            android:gravity="left|center"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_shape"
-            android:paddingLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:text="Prasanna"
-            android:gravity="left|center"/>
+            android:layout_height="match_parent"/>
 
     </LinearLayout>
 
