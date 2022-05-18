@@ -9,14 +9,107 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/bottom_navigator">
+        android:layout_above="@+id/bottom_navigator"
+        android:background="@android:color/black">
 
         <TextView
+            android:id="@+id/notifyLabel"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@android:color/black"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"
+
+
+            android:text="@string/notification"
+            android:textAlignment="textStart"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <androidx.appcompat.widget.SwitchCompat
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="Settings"
-            android:textSize="30dp"/>
+
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+
+            android:layout_toEndOf="@+id/notifyLabel"
+            android:textOff="off"
+            android:textOn="on"
+            android:thumb="@drawable/thumb"
+            app:showText="true"
+            app:track="@drawable/track" />
+
+
+        <!--<com.google.android.material.chip.Chip
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+
+            android:layout_marginEnd="20dp"
+            android:layout_toEndOf="@+id/notifyLabel"
+            android:background="#CA76E1"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"/>-->
+
+
+        <TextView
+            android:id="@+id/reminder"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/notifyLabel"
+            android:layout_marginLeft="20dp"
+
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="20dp"
+            android:background="@android:color/black"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"
+
+
+            android:text="@string/remider"
+            android:textAlignment="textStart"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+
+            android:layout_below="@+id/reminder"
+            android:layout_marginLeft="20dp"
+
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:background="#CCA4D7"
+            android:outlineSpotShadowColor="@color/white"
+            android:paddingHorizontal="10dp"
+
+            android:paddingVertical="5dp"
+            android:textAlignment="textStart"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="20dp"
+
+            android:paddingVertical="5dp"
+            android:paddingHorizontal ="10dp"
+            android:textAlignment="textStart"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:text="@string/save"
+            android:background="#631A77"/>
+
 
     </RelativeLayout>
 
@@ -29,3 +122,5 @@
         android:background="?android:attr/windowBackground"/>
 
 </RelativeLayout>
+
+
