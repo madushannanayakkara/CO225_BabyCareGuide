@@ -131,4 +131,9 @@ class DatabaseH extends SQLiteOpenHelper {
         return -2;
     }
 
+    //testing
+    void testing(){
+        System.out.println("check");
+    };
+
 }
