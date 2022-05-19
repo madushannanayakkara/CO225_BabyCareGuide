@@ -316,35 +316,32 @@ class DatabaseH extends SQLiteOpenHelper {
 
     }
 
-//    void deleteRow(int id, int replacedid){
-//        int last_saved_id = readLastSavedID();
-//        SQLiteDatabase db = this.getWritableDatabase();
-//
-//        if(last_saved_id != id){
-//            long result = db.delete(TABLE_NAME,  "baby_id = ?", new String[]{String.valueOf(id)});
-//            if(result == -1){
-//                Toast.makeText(context, "Faild to Delete !!", Toast.LENGTH_SHORT);
-//            } else {
-//                Toast.makeText(context, "Successfully Deleteed !!", Toast.LENGTH_SHORT);
-//            }
-//        } else{
-//            long result = db.delete(LASTSAVEDID,  "baby_id = ?", new String[]{String.valueOf(id)});
-//            if(result != -1){
-//                result = db.delete(TABLE_NAME,  "baby_id = ?", new String[]{String.valueOf(id)});
-//                if(result != -1){
-//                    Toast.makeText(context, "Successfully Deleteed !!", Toast.LENGTH_SHORT);
-//                    if(replacedid > 0){
-//                        updateLastSavedID(replacedid);
-//                    }
-//                } else {
-//                    Toast.makeText(context, "Faild to Delete !!", Toast.LENGTH_SHORT);
-//                    updateLastSavedID(id);
-//                }
-//            } else {
-//                Toast.makeText(context, "Faild to Delete !!", Toast.LENGTH_SHORT);
-//            }
-//        }
-//
-//    }
+    void deleteRow(int id, int replacedid){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        if(replacedid > 0){
+            long result = db.delete(LASTSAVEDID,  "baby_id = ?", new String[]{String.valueOf(id)});
+            if(result != -1){
+                result = db.delete(TABLE_NAME,  "baby_id = ?", new String[]{String.valueOf(id)});
+                if(result != -1){
+                    Toast.makeText(context, "Successfully Deleteed !!", Toast.LENGTH_SHORT);
+                    updateLastSavedID(replacedid);
+                } else {
+                    Toast.makeText(context, "Faild to Delete !!", Toast.LENGTH_SHORT);
+                    updateLastSavedID(id);
+                }
+            } else {
+                Toast.makeText(context, "Faild to Delete !!", Toast.LENGTH_SHORT);
+            }
+        } else {
+            long result = db.delete(TABLE_NAME,  "baby_id = ?", new String[]{String.valueOf(id)});
+            if(result == -1){
+                Toast.makeText(context, "Faild to Delete !!", Toast.LENGTH_SHORT);
+            } else {
+                Toast.makeText(context, "Successfully Deleteed !!", Toast.LENGTH_SHORT);
+            }
+        }
+
+    }
 
 }

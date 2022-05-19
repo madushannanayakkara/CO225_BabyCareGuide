@@ -11,5 +11,7 @@
     <color name="grey">#d8ded9</color>
     <color name="highlightgreen">#5DE23C</color>
     <color name="highlightred">#F72F35</color>
+    <color name="highlightorange">#FF793B</color>
+    <color name="highlightblue">#30C5FF</color>
 
 </resources>

@@ -56,60 +56,60 @@ public class CustomAdpter extends RecyclerView.Adapter<CustomAdpter.MyViewHolder
             }
         });
 
-//        holder.card_acc_name.setOnLongClickListener(new View.OnLongClickListener() {
-//            @Override
-//            public boolean onLongClick(View view) {
-//                AlertDialog.Builder builder = new AlertDialog.Builder(context)
-//                        .setTitle("Delete Account")
-//                        .setMessage("Are you sure want to delete \'"+ fname.get(holder.getAbsoluteAdapterPosition()) + " " +
-//                                lname.get(holder.getAbsoluteAdapterPosition()) +"\' ?")
-//                        .setIcon(R.drawable.ic_delete)
-//                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-//                            @Override
-//                            public void onClick(DialogInterface dialogInterface, int i) {
-//                                MainActivity ma = (MainActivity) context;
-//                                TextView txtv_title = ma.findViewById(R.id.txtv_title);
-//
-//                                int replacedid = -1;
-//                                if(dh.readLastSavedID() == dh.findID(String.valueOf(fname.get(holder.getAbsoluteAdapterPosition())),
-//                                        String.valueOf(lname.get(holder.getAbsoluteAdapterPosition())))){
-//                                    if(holder.getAbsoluteAdapterPosition() - 1 >= 0){
-//                                        replacedid = dh.findID(String.valueOf(fname.get(holder.getAbsoluteAdapterPosition() - 1)),
-//                                                String.valueOf(lname.get(holder.getAbsoluteAdapterPosition() - 1)));
-//                                        txtv_title.setText(dh.readAccName(replacedid));
-//                                    } else {
-//                                        if(fname.size() > 0){
-//                                            replacedid = dh.findID(String.valueOf(fname.get(holder.getAbsoluteAdapterPosition() + 1)),
-//                                                    String.valueOf(lname.get(holder.getAbsoluteAdapterPosition() + 1)));
-//                                            txtv_title.setText(dh.readAccName(replacedid));
-//                                        }else {
-//                                            txtv_title.setText("Account");
-//                                            bottomSheetDialog.dismiss();
-//                                        }
-//
-//                                    }
-//                                }
-//
-//                                /*dh.deleteRow(dh.findID(String.valueOf(fname.get(holder.getAbsoluteAdapterPosition())),
-//                                        String.valueOf(lname.get(holder.getAbsoluteAdapterPosition()))),
-//                                        replacedid);*/
-//                                fname.remove(holder.getAbsoluteAdapterPosition());
-//                                lname.remove(holder.getAbsoluteAdapterPosition());
-//                                notifyItemRemoved(holder.getAbsoluteAdapterPosition());
-//
-//                            }
-//                        })
-//                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
-//                            @Override
-//                            public void onClick(DialogInterface dialogInterface, int i) {
-//
-//                            }
-//                        });
-//                builder.show();
-//
-//                return true;
-//            }
-//        });
+        holder.card_acc_name.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(context)
+                        .setTitle("Delete Account")
+                        .setMessage("Are you sure want to delete \'"+ fname.get(holder.getAbsoluteAdapterPosition()) + " " +
+                                lname.get(holder.getAbsoluteAdapterPosition()) +"\' ?")
+                        .setIcon(R.drawable.ic_delete)
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                MainActivity ma = (MainActivity) context;
+                                TextView txtv_title = ma.findViewById(R.id.txtv_title);
+
+                                int replacedid = -1;
+                                if(dh.readLastSavedID() == dh.findID(String.valueOf(fname.get(holder.getAbsoluteAdapterPosition())),
+                                        String.valueOf(lname.get(holder.getAbsoluteAdapterPosition())))){
+                                    if(holder.getAbsoluteAdapterPosition() - 1 >= 0){
+                                        replacedid = dh.findID(String.valueOf(fname.get(holder.getAbsoluteAdapterPosition() - 1)),
+                                                String.valueOf(lname.get(holder.getAbsoluteAdapterPosition() - 1)));
+                                        txtv_title.setText(dh.readAccName(replacedid));
+                                    } else {
+                                        if(fname.size() > 0){
+                                            replacedid = dh.findID(String.valueOf(fname.get(holder.getAbsoluteAdapterPosition() + 1)),
+                                                    String.valueOf(lname.get(holder.getAbsoluteAdapterPosition() + 1)));
+                                            txtv_title.setText(dh.readAccName(replacedid));
+                                        }else {
+                                            txtv_title.setText("Account");
+                                            bottomSheetDialog.dismiss();
+                                        }
+
+                                    }
+                                }
+
+                                dh.deleteRow(dh.findID(String.valueOf(fname.get(holder.getAbsoluteAdapterPosition())),
+                                        String.valueOf(lname.get(holder.getAbsoluteAdapterPosition()))),
+                                        replacedid);
+                                fname.remove(holder.getAbsoluteAdapterPosition());
+                                lname.remove(holder.getAbsoluteAdapterPosition());
+                                notifyItemRemoved(holder.getAbsoluteAdapterPosition());
+
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                            }
+                        });
+                builder.show();
+
+                return true;
+            }
+        });
 
     }
 
