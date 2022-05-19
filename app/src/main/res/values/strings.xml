@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Baby Development Tracking System</string>
+    <string name="hc_name">Firstname LastName</string>
 
     <string name="col0">Done</string>
     <string name="col1">Age</string>
