@@ -95,7 +95,7 @@ public class Vaccination extends AppCompatActivity  {
             @Override
             public void onClick(View view) {
 
-                calcButton.setText(d1);
+               // calcButton.setText(d1);
 
                 if(cb9.isChecked()){
 
@@ -182,6 +182,7 @@ public class Vaccination extends AppCompatActivity  {
                     vac = findViewById(R.id.r22);
 
                     String strDate = setDate(d1, 1, 14);
+                    //calcButton.setText(strDate);
                     text.setText(strDate);
 
                     vaccined = count[8];
@@ -196,6 +197,21 @@ public class Vaccination extends AppCompatActivity  {
 
 
     }
+
+
+
+    /*public String setDate(String date, int i, int noToAdd){
+
+        //To add months int i=2
+        //TO add weeks int i=1
+        String updated_date;
+
+        String before_update = date;
+
+        return updated_date;
+
+
+    }*/
 
     public String setDate(String date, int i, int noToAdd){
 

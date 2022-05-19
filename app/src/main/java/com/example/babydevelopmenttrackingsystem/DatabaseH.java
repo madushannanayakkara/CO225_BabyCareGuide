@@ -116,14 +116,14 @@ class DatabaseH extends SQLiteOpenHelper {
         }
     }
 
-    public void addVaccineData(String name, String done, int vaccined/*int userId*/){
+    public void addVaccineData(String name, String done, int vaccined,int userId){
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
 
         contentValues.put(VACCINE, name);
-        //contentValues.put(USERID, userId);
+        contentValues.put(USERID, userId);
         contentValues.put(DONE, done);
 
         /* Save to the table*/
@@ -140,6 +140,26 @@ class DatabaseH extends SQLiteOpenHelper {
         else{
             Toast.makeText(context, "This vaccine is already given:)", Toast.LENGTH_SHORT).show();
         }
+
+    }
+
+    public void addNotifyData(String timePeriod, int userID){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(TIMEPERIOD, timePeriod);
+        cv.put(USERID, userID);
+
+
+        long result = db.insert(TABLE4, null, cv);
+
+        if (result == -1){
+            Toast.makeText(context, "Failed!", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Added successfully !!", Toast.LENGTH_SHORT).show();
+        }
+
 
     }
 
@@ -278,19 +298,14 @@ class DatabaseH extends SQLiteOpenHelper {
         return -2;
     }
 
-    public String getDate(int ID){
+     public String getDate(int ID){
         String query = "SELECT " + COLUMN_BIRTHDATE + " FROM " + TABLE_NAME + " WHERE " + COLUMN_ID + " = " + ID ;
         SQLiteDatabase db = this.getReadableDatabase();
 
-        if(db != null){
-            Cursor cursor = db.rawQuery(query, null);
-            if(cursor.getCount() == 0){
-                return null;
-            } else {
-                return cursor.getString(0);
-            }
-        }
-        return null;
+        Cursor cursor = db.rawQuery(query, null);
+        cursor.moveToFirst();
+
+        return cursor.getString(0);
 
     }
 
