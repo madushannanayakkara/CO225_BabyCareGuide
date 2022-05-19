@@ -37,18 +37,18 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/black"
-
             android:layout_marginLeft="20dp"
+
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
+            android:background="@android:color/black"
             android:paddingVertical="5dp"
 
             android:text="@string/nextDay"
+            android:textAlignment="center"
             android:textColor="@android:color/white"
             android:textSize="20sp"
-            android:textStyle="bold|italic"
-            android:textAlignment="center"/>
+            android:textStyle="bold|italic" />
 
         <TextView
             android:id="@+id/date"
