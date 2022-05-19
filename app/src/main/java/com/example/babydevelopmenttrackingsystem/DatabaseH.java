@@ -227,11 +227,24 @@ class DatabaseH extends SQLiteOpenHelper {
         return cursor;
     }
 
-
-    public int readLastSavedID(){
-        String query = "SELECT * FROM " + LASTSAVEDID;
+    String readAccName(int id){
+        String query = "SELECT " + COLUMN_FNAME + ", " + COLUMN_LNAME + " FROM " + TABLE_NAME + " WHERE " + COLUMN_ID + " = " + id;
         SQLiteDatabase db = this.getReadableDatabase();
 
+        if(db != null){
+            Cursor cursor = db.rawQuery(query, null);
+            cursor.moveToFirst();
+
+            if(cursor.getCount() > 0){
+                return cursor.getString(0) + " " + cursor.getString(1);
+            }
+        }
+        return "Account";
+    }
+
+    public int readLastSavedID(){
+        String query = "SELECT " + COLUMN_ID + " FROM " + LASTSAVEDID;
+        SQLiteDatabase db = this.getReadableDatabase();
 
         if(db != null){
             Cursor cursor = db.rawQuery(query, null);
@@ -248,21 +261,30 @@ class DatabaseH extends SQLiteOpenHelper {
 
     void updateLastSavedID(int id){
         int last_saved_id = readLastSavedID();
-        String query = null;
+        SQLiteDatabase db = this.getWritableDatabase();
 
         if (last_saved_id > 0){
-            query = "UPDATE " + LASTSAVEDID + " SET " + COLUMN_ID + " = " + id + " WHERE " + COLUMN_ID + " = " + readLastSavedID();
-        }else if(last_saved_id == -1){
-            query = "INSERT INTO " + LASTSAVEDID + " VALUES (" + id + ");";
-        }
+            ContentValues cv = new ContentValues();
+            cv.put(COLUMN_ID, id);
 
-        SQLiteDatabase db = this.getWritableDatabase();
-        db.rawQuery(query, null);
+            long result = db.update(LASTSAVEDID, cv,  "baby_id = ?", new String[]{String.valueOf(readLastSavedID())});
+            if (result == -1){
+                Toast.makeText(context, "Error Occurred !!", Toast.LENGTH_SHORT).show();
+            }
+        }else if (last_saved_id == -1){
+            ContentValues cv = new ContentValues();
+            cv.put(COLUMN_ID, id);
+
+            long result = db.insert(LASTSAVEDID, null, cv);
+            if (result == -1){
+                Toast.makeText(context, "Error Occurred !!", Toast.LENGTH_SHORT).show();
+            }
+        }
 
     }
 
     public int findID(String Fname, String Lname){
-        String query = "SELECT " + COLUMN_ID + " FROM " + TABLE_NAME + " WHERE " + COLUMN_FNAME + " = " + Fname + " && " + COLUMN_LNAME + " = " + Lname;
+        String query = "SELECT " + COLUMN_ID + " FROM " + TABLE_NAME + " WHERE " + COLUMN_FNAME + " = \"" + Fname + "\" AND " + COLUMN_LNAME + " = \"" + Lname + "\"";
         SQLiteDatabase db = this.getReadableDatabase();
 
         if(db != null){
@@ -293,5 +315,36 @@ class DatabaseH extends SQLiteOpenHelper {
         return null;
 
     }
+
+//    void deleteRow(int id, int replacedid){
+//        int last_saved_id = readLastSavedID();
+//        SQLiteDatabase db = this.getWritableDatabase();
+//
+//        if(last_saved_id != id){
+//            long result = db.delete(TABLE_NAME,  "baby_id = ?", new String[]{String.valueOf(id)});
+//            if(result == -1){
+//                Toast.makeText(context, "Faild to Delete !!", Toast.LENGTH_SHORT);
+//            } else {
+//                Toast.makeText(context, "Successfully Deleteed !!", Toast.LENGTH_SHORT);
+//            }
+//        } else{
+//            long result = db.delete(LASTSAVEDID,  "baby_id = ?", new String[]{String.valueOf(id)});
+//            if(result != -1){
+//                result = db.delete(TABLE_NAME,  "baby_id = ?", new String[]{String.valueOf(id)});
+//                if(result != -1){
+//                    Toast.makeText(context, "Successfully Deleteed !!", Toast.LENGTH_SHORT);
+//                    if(replacedid > 0){
+//                        updateLastSavedID(replacedid);
+//                    }
+//                } else {
+//                    Toast.makeText(context, "Faild to Delete !!", Toast.LENGTH_SHORT);
+//                    updateLastSavedID(id);
+//                }
+//            } else {
+//                Toast.makeText(context, "Faild to Delete !!", Toast.LENGTH_SHORT);
+//            }
+//        }
+//
+//    }
 
 }
