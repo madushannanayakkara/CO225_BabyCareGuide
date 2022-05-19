@@ -101,7 +101,7 @@
                 android:layout_gravity="center"
                 android:gravity="left"
                 android:hint="-----------------------------"
-                android:inputType="date"
+                android:inputType="text"
                 android:minHeight="48dp"
                 android:textColor="#c9f9ff" />
 
@@ -273,7 +273,7 @@
                 android:layout_gravity="center"
                 android:gravity="left"
                 android:hint="-----------------------------"
-                android:inputType="date"
+                android:inputType="text"
                 android:textColor="#c9f9ff" />
 
             <TextView
