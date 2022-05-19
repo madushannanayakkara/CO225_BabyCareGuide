@@ -12,7 +12,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:background="@drawable/button_add_acc"
-            android:backgroundTint="@color/grey">
+            android:backgroundTint="#FFFAFA">
 
             <TextView
                 android:id="@+id/txtAccName"

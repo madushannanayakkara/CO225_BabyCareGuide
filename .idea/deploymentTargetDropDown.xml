@@ -2,6 +2,7 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <runningDeviceTargetSelectedWithDropDown>
+      
       <Target>
         <type value="RUNNING_DEVICE_TARGET" />
         <deviceKey>
@@ -13,16 +14,18 @@
       </Target>
     </runningDeviceTargetSelectedWithDropDown>
     <targetSelectedWithDropDown>
+
       <Target>
-        <type value="QUICK_BOOT_TARGET" />
+        <type value="RUNNING_DEVICE_TARGET" />
         <deviceKey>
           <Key>
-            <type value="VIRTUAL_DEVICE_PATH" />
-            <value value="C:\Users\ASUS\.android\avd\Pixel_5_API_23.avd" />
+            <type value="SERIAL_NUMBER" />
+            <value value="8UEDU18716001792" />
           </Key>
         </deviceKey>
       </Target>
     </targetSelectedWithDropDown>
     <timeTargetWasSelectedWithDropDown value="2022-05-19T17:34:02.314303400Z" />
+
   </component>
 </project>
