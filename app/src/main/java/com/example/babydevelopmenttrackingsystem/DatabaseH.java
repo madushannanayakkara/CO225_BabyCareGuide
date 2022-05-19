@@ -119,14 +119,14 @@ class DatabaseH extends SQLiteOpenHelper {
         }
     }
 
-    public void addVaccineData(String name, String done, int vaccined/*int userId*/){
+    public void addVaccineData(String name, String done, int vaccined,int userId){
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
 
         contentValues.put(VACCINE, name);
-        //contentValues.put(USERID, userId);
+        contentValues.put(USERID, userId);
         contentValues.put(DONE, done);
 
         /* Save to the table*/
@@ -143,6 +143,26 @@ class DatabaseH extends SQLiteOpenHelper {
         else{
             Toast.makeText(context, "This vaccine is already given:)", Toast.LENGTH_SHORT).show();
         }
+
+    }
+
+    public void addNotifyData(String timePeriod, int userID){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(TIMEPERIOD, timePeriod);
+        cv.put(USERID, userID);
+
+
+        long result = db.insert(TABLE4, null, cv);
+
+        if (result == -1){
+            Toast.makeText(context, "Failed!", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Added successfully !!", Toast.LENGTH_SHORT).show();
+        }
+
 
     }
 
