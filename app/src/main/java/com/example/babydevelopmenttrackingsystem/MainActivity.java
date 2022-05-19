@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        dh = new DatabaseH(MainActivity.this);
         btnDetails = findViewById(R.id.btnDetails);
         btnVaccination = findViewById(R.id.btnVaccination);
         btnBMI = findViewById(R.id.btnBmi);
@@ -98,13 +99,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 });
 
                 recylerview = bottomSheetView.findViewById(R.id.recyclerview);
-                dh = new DatabaseH(MainActivity.this);
                 fname = new ArrayList<>();
                 lname = new ArrayList<>();
 
                 storeAccDataArrays();
 
-                customAdpter = new CustomAdpter(MainActivity.this, fname, lname, dh);
+                customAdpter = new CustomAdpter(MainActivity.this, fname, lname, dh, bottomSheetDialog);
                 recylerview.setAdapter(customAdpter);
                 recylerview.setLayoutManager(new LinearLayoutManager(MainActivity.this));
 
@@ -112,6 +112,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 bottomSheetDialog.show();
             }
         });
+
+        txtv_title.setText(dh.readAccName(dh.readLastSavedID()));
 
     }
 
