@@ -85,6 +85,7 @@ class DatabaseH extends SQLiteOpenHelper {
         db.execSQL(query1);
         db.execSQL(query2);
         db.execSQL(query3);
+        db.execSQL(query4);
 
     }
 
@@ -325,15 +326,10 @@ class DatabaseH extends SQLiteOpenHelper {
         String query = "SELECT " + COLUMN_BIRTHDATE + " FROM " + TABLE_NAME + " WHERE " + COLUMN_ID + " = " + ID ;
         SQLiteDatabase db = this.getReadableDatabase();
 
-        if(db != null){
-            Cursor cursor = db.rawQuery(query, null);
-            if(cursor.getCount() == 0){
-                return null;
-            } else {
-                return cursor.getString(0);
-            }
-        }
-        return null;
+        Cursor cursor = db.rawQuery(query, null);
+        cursor.moveToFirst();
+
+        return cursor.getString(0);
 
     }
 
