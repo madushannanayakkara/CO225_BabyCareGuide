@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.*;
 import java.text.DateFormat;
 import java.util.Date;
@@ -84,18 +85,17 @@ public class Vaccination extends AppCompatActivity  {
         calcButton = findViewById(R.id.calcButton);
         text = findViewById(R.id.date);
 
-        /*int id = databaseH.readLastSavedID();
-        String d1 = databaseH.getDate(id);*/
+        int id = databaseH.readLastSavedID();
+        String d1 = databaseH.getDate(id);
 
-        //Variables to add data to the database
-
-
-        String d1 = "2017-01-29";
+        /*String d1 = "2017.01.02";*/
 
 
         calcButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+               // calcButton.setText(d1);
 
                 if(cb9.isChecked()){
 
@@ -182,6 +182,7 @@ public class Vaccination extends AppCompatActivity  {
                     vac = findViewById(R.id.r22);
 
                     String strDate = setDate(d1, 1, 14);
+                    //calcButton.setText(strDate);
                     text.setText(strDate);
 
                     vaccined = count[8];
@@ -189,7 +190,7 @@ public class Vaccination extends AppCompatActivity  {
 
                 }
 
-                databaseH.addVaccineData(vac.getText().toString().trim(),"done",vaccined);
+                databaseH.addVaccineData(vac.getText().toString().trim(),"done",vaccined,id);
 
             }
         });
@@ -197,13 +198,35 @@ public class Vaccination extends AppCompatActivity  {
 
     }
 
+
+
+    /*public String setDate(String date, int i, int noToAdd){
+
+        //To add months int i=2
+        //TO add weeks int i=1
+        String updated_date;
+
+        String before_update = date;
+
+        return updated_date;
+
+
+    }*/
+
     public String setDate(String date, int i, int noToAdd){
 
         String updated = "";
         String oldDate;
         oldDate = date;
 
-        @SuppressLint("SimpleDateFormat") SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        /*String[] parts = date.split(".");
+        String year = parts[0];
+        String month = parts[1];
+        String day = parts[2];
+
+        LocalDate datecal = LocalDate.parse(date);*/
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Calendar c = Calendar.getInstance();
         try{
             //Setting the date to the given date
@@ -218,12 +241,8 @@ public class Vaccination extends AppCompatActivity  {
             updated = sdf.format(c.getTime());
         }
         else {
-            if(i==2){
-                c.add(Calendar.MONTH, noToAdd);
-            }
-            else{
-                updated = "";
-            }
+
+            c.add(Calendar.MONTH, noToAdd);
             updated = sdf.format(c.getTime());
         }
 

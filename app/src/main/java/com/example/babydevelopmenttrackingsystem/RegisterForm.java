@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -20,7 +21,8 @@ public class RegisterForm extends AppCompatActivity implements View.OnClickListe
     private static final String TAG = "RegisterForm";
     private EditText txtFirstName, txtLastName, txtBirthdate, txtCurrentWeight, txtCurrentHeight;
     private TextView txtViewNotify;
-    private RadioGroup rbGender;
+    private RadioGroup radioGroup;
+    private RadioButton radioButton;
     private Button btnRegister;
     private RelativeLayout parent;
 
@@ -53,7 +55,7 @@ public class RegisterForm extends AppCompatActivity implements View.OnClickListe
 
         txtFirstName.setOnClickListener(this);
         txtLastName.setOnClickListener(this);
-        rbGender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId){
                 switch (checkedId){
@@ -68,7 +70,7 @@ public class RegisterForm extends AppCompatActivity implements View.OnClickListe
         })
         ;
 
-//        btnRegister.setOnClickListener(this);
+
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
 
@@ -78,12 +80,17 @@ public class RegisterForm extends AppCompatActivity implements View.OnClickListe
                 if (validateData()) {
                     showSnackBar();
 
+                    int selectedGender = radioGroup.getCheckedRadioButtonId();
+                    radioButton = (RadioButton)findViewById(selectedGender);
+
                     DatabaseH myDB = new DatabaseH(RegisterForm.this);
                     myDB.addBaby(txtFirstName.getText().toString().trim(),
                             txtLastName.getText().toString().trim(),
                             txtBirthdate.getText().toString().trim(),
-                            Integer.valueOf(txtCurrentWeight.getText().toString().trim()),
-                            Integer.valueOf(txtCurrentHeight.getText().toString().trim()));
+                            radioButton.getText().toString().trim(),
+                            txtCurrentWeight.getText().toString().trim(),
+                            txtCurrentHeight.getText().toString().trim());
+
                 }
             }
         });
@@ -118,12 +125,20 @@ public class RegisterForm extends AppCompatActivity implements View.OnClickListe
                 }).show();
     }
 
+    public void checkButton (View view){
+        int selectedGender = radioGroup.getCheckedRadioButtonId();
+        radioButton = (RadioButton)findViewById(selectedGender);
+    }
+
     private void initViews(){
         Log.d(TAG, "initViews: Started");
         txtFirstName     = findViewById(R.id.editTextFirstName);
         txtLastName = findViewById(R.id.editTextLastName);
         txtBirthdate = findViewById(R.id.editTextBirthDate);
-        rbGender = findViewById(R.id.rbGender);
+
+        radioGroup = (RadioGroup)findViewById(R.id.radioGroup);
+
+
         btnRegister = findViewById(R.id.buttonRegister);
         txtCurrentWeight = findViewById(R.id.editTextCurrentWeight);
         txtCurrentHeight = findViewById(R.id.editTextCurrentHeight);

@@ -1,9 +1,16 @@
 package com.example.babydevelopmenttrackingsystem;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.app.AlarmManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,14 +27,18 @@ public class settings extends AppCompatActivity implements AdapterView.OnItemSel
     private Button saveChanges;
     private Spinner spinner;
     private String text;
+    private DatabaseH databaseH;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+        createNotificationChannel();
 
         bottomNav = findViewById(R.id.bottom_navigator);
         bottomNav.setSelectedItemId(R.id.nav_settings);
+
+        databaseH = new DatabaseH(settings.this);
 
         bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -69,14 +80,49 @@ public class settings extends AppCompatActivity implements AdapterView.OnItemSel
             @Override
             public void onClick(View view) {
 
+                Toast.makeText(settings.this, "Reminder set", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(settings.this, ReminderBroadcast.class);
+                @SuppressLint("UnspecifiedImmutableFlag") PendingIntent pendingIntent = PendingIntent.getBroadcast(settings.this,0,intent,0);
+
+                AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+
+                long timeAtButtonOnClick = System.currentTimeMillis();
+
+                long tenSecondsInMillis = 1000 * 10;
+
+                alarmManager.set(AlarmManager.RTC_WAKEUP, timeAtButtonOnClick+tenSecondsInMillis, pendingIntent);
+
+                int id = databaseH.readLastSavedID();
                 text = spinner.getSelectedItem().toString();
+                databaseH.addNotifyData(text,id);
 
             }
+
         });
 
 
 
 
+
+    }
+
+
+    private void createNotificationChannel(){
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+
+            CharSequence name = "VaccinReminderChannel";
+            String description = "Channel for vaccine Reminder";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel("notifyBabyVaccine",name
+            ,importance);
+            channel.setDescription((description));
+
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+
+
+        }
 
     }
 
