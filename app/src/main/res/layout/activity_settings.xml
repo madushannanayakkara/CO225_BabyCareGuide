@@ -17,13 +17,11 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="25dp"
             android:layout_marginRight="20dp"
             android:background="@android:color/black"
             android:paddingHorizontal="10dp"
             android:paddingVertical="5dp"
-
-
             android:text="@string/notification"
             android:textAlignment="textStart"
             android:textColor="@android:color/white"
@@ -32,10 +30,9 @@
         <androidx.appcompat.widget.SwitchCompat
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="22dp"
 
             android:layout_toEndOf="@+id/notifyLabel"
             android:textOff="off"
@@ -63,7 +60,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/notifyLabel"
             android:layout_marginLeft="20dp"
-
             android:layout_marginTop="50dp"
             android:layout_marginRight="20dp"
             android:background="@android:color/black"
@@ -80,16 +76,13 @@
             android:id="@+id/spinner1"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-
             android:layout_below="@+id/reminder"
             android:layout_marginLeft="20dp"
-
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:background="#CCA4D7"
             android:outlineSpotShadowColor="@color/white"
             android:paddingHorizontal="10dp"
-
             android:paddingVertical="5dp"
             android:textAlignment="textStart"
             android:textColor="@android:color/white"

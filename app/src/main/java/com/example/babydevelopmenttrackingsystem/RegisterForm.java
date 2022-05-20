@@ -88,8 +88,9 @@ public class RegisterForm extends AppCompatActivity implements View.OnClickListe
                             txtLastName.getText().toString().trim(),
                             txtBirthdate.getText().toString().trim(),
                             radioButton.getText().toString().trim(),
-                            Integer.valueOf(txtCurrentWeight.getText().toString().trim()),
-                            Integer.valueOf(txtCurrentHeight.getText().toString().trim()));
+                            txtCurrentWeight.getText().toString().trim(),
+                            txtCurrentHeight.getText().toString().trim());
+
                 }
             }
         });

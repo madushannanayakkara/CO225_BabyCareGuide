@@ -40,154 +40,219 @@
                 android:text="D i s p l a y"
                 android:textColor="#c9f9ff"
                 android:textSize="13dp"
-                android:textStyle="italic|bold" />
+                android:textStyle="italic|bold"
+                android:layout_marginBottom="20dp" />
 
-            <TextView
-                android:id="@+id/textfirstname"
-                android:layout_width="120dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="left"
-                android:paddingTop="30dp"
-                android:text="First Name"
-                android:textColor="#c9f9ff"
-                android:textSize="15sp" />
-            <!--            android:background="@color/black"-->
-            <EditText
-                android:id="@+id/firstname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="left"
-                android:hint="-----------------------------"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:textColor="#c9f9ff" />
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
 
-            <TextView
-                android:id="@+id/textlastname"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:gravity="left"
-                android:paddingTop="10dp"
-                android:text="Last Name"
-                android:textColor="#c9f9ff"
-                android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/textfirstname"
+                    android:layout_width="130dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:paddingTop="10dp"
+                    android:text="First Name"
+                    android:textColor="#c9f9ff"
+                    android:textSize="15sp"
+                    android:layout_marginTop="10dp"/>
+                <!--            android:background="@color/black"-->
+                <EditText
+                    android:id="@+id/firstname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="left"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    android:textColor="#c9f9ff"/>
 
-            <EditText
-                android:id="@+id/lastname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="left"
-                android:hint="-----------------------------"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:textColor="#c9f9ff" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/textbirthdate"
-                android:layout_width="120dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="left"
-                android:paddingTop="10dp"
-                android:text="Birth Date"
-                android:textColor="#c9f9ff"
-                android:textSize="15sp" />
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
 
-            <EditText
-                android:id="@+id/birthdate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="left"
-                android:hint="-----------------------------"
-                android:inputType="text"
-                android:minHeight="48dp"
-                android:textColor="#c9f9ff" />
+                <TextView
+                    android:id="@+id/textlastname"
+                    android:layout_width="130dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:paddingTop="10dp"
+                    android:text="Last Name"
+                    android:textColor="#c9f9ff"
+                    android:textSize="15sp"
+                    android:layout_marginTop="10dp" />
 
-            <TextView
-                android:id="@+id/textgender"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:gravity="left"
-                android:paddingTop="10dp"
-                android:text="Gender"
-                android:textColor="#c9f9ff"
-                android:textSize="15sp" />
+                <EditText
+                    android:id="@+id/lastname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="left"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    android:textColor="#c9f9ff" />
 
-            <EditText
-                android:id="@+id/gender"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="left"
-                android:hint="-----------------------------"
-                android:inputType="date"
-                android:minHeight="48dp"
-                android:textColor="#c9f9ff" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/textBweight"
-                android:layout_width="120dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="left"
-                android:paddingTop="10dp"
-                android:text="Birth Weight"
-                android:textColor="#c9f9ff"
-                android:textSize="15sp" />
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
 
-            <EditText
-                android:id="@+id/birthweight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="left"
-                android:hint="-----------------------------"
-                android:inputType="number"
-                android:minHeight="48dp"
-                android:textColor="#c9f9ff" />
+                <TextView
+                    android:id="@+id/textbirthdate"
+                    android:layout_width="130dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:paddingTop="10dp"
+                    android:text="Birth Date"
+                    android:textColor="#c9f9ff"
+                    android:textSize="15sp"
+                    android:layout_marginTop="10dp"/>
 
-            <TextView
-                android:id="@+id/textweight"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:gravity="left"
-                android:paddingTop="10dp"
-                android:text="Current Weight"
-                android:textColor="#c9f9ff"
-                android:textSize="15sp" />
+                <EditText
+                    android:id="@+id/birthdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="left"
+                    android:inputType="text"
+                    android:minHeight="48dp"
+                    android:textColor="#c9f9ff" />
 
-            <EditText
-                android:id="@+id/currentweight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="left"
-                android:hint="-----------------------------"
-                android:inputType="number"
-                android:minHeight="48dp"
-                android:textColor="#c9f9ff" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/textheight"
-                android:layout_width="120dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="left"
-                android:paddingTop="10dp"
-                android:text="Current Height"
-                android:textColor="#c9f9ff"
-                android:textSize="15sp" />
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
 
-            <EditText
-                android:id="@+id/currentheight"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/textgender"
+                    android:layout_width="130dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:paddingTop="10dp"
+                    android:text="Gender"
+                    android:textColor="#c9f9ff"
+                    android:textSize="15sp"
+                    android:layout_marginTop="10dp" />
+
+                <EditText
+                    android:id="@+id/gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="left"
+                    android:inputType="date"
+                    android:minHeight="48dp"
+                    android:textColor="#c9f9ff" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="left"
-                android:hint="-----------------------------"
-                android:inputType="number"
-                android:minHeight="48dp"
-                android:textColor="#c9f9ff" />
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:id="@+id/textBweight"
+                    android:layout_width="130dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:paddingTop="10dp"
+                    android:text="Birth Weight"
+                    android:textColor="#c9f9ff"
+                    android:textSize="15sp"
+                    android:layout_marginTop="10dp" />
+
+                <EditText
+                    android:id="@+id/birthweight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="left"
+                    android:inputType="number"
+                    android:minHeight="48dp"
+                    android:textColor="#c9f9ff" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:id="@+id/textweight"
+                    android:layout_width="130dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:paddingTop="10dp"
+                    android:text="Current Weight"
+                    android:textColor="#c9f9ff"
+                    android:textSize="15sp"
+                    android:layout_marginTop="10dp" />
+
+                <EditText
+                    android:id="@+id/currentweight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="left"
+                    android:inputType="number"
+                    android:minHeight="48dp"
+                    android:textColor="#c9f9ff" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:id="@+id/textheight"
+                    android:layout_width="130dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:paddingTop="10dp"
+                    android:text="Current Height"
+                    android:textColor="#c9f9ff"
+                    android:textSize="15sp"
+                    android:layout_marginTop="10dp" />
+
+                <EditText
+                    android:id="@+id/currentheight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="left"
+                    android:inputType="number"
+                    android:minHeight="48dp"
+                    android:textColor="#c9f9ff" />
+
+            </LinearLayout>
+
 
 
             <!--            //////////////////////////////////////-->
@@ -212,136 +277,192 @@
                 android:text="D i s p l a y"
                 android:textColor="#c9f9ff"
                 android:textSize="13dp"
-                android:textStyle="italic|bold" />
+                android:textStyle="italic|bold"
+                android:layout_marginBottom="20dp"/>
 
-            <TextView
-                android:id="@+id/textfirstnameG"
-                android:layout_width="130dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="left"
-                android:paddingTop="30dp"
-                android:text="First Name"
-                android:textColor="#c9f9ff"
-                android:textSize="15sp" />
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
 
-            <EditText
-                android:id="@+id/firstnameG"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="left"
-                android:hint="-----------------------------"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:textColor="#c9f9ff" />
+                <TextView
+                    android:id="@+id/textfirstnameG"
+                    android:layout_width="130dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:paddingTop="10dp"
+                    android:text="First Name"
+                    android:textColor="#c9f9ff"
+                    android:textSize="15sp"
+                    android:layout_marginTop="10dp" />
 
-            <TextView
-                android:id="@+id/textlastnameG"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:gravity="left"
-                android:paddingTop="10dp"
-                android:text="Last Name"
-                android:textColor="#c9f9ff"
-                android:textSize="15sp" />
+                <EditText
+                    android:id="@+id/firstnameG"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="left"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    android:textColor="#c9f9ff" />
 
-            <EditText
-                android:id="@+id/lastnameG"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="left"
-                android:hint="-----------------------------"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:textColor="#c9f9ff" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/textbirthdateG"
-                android:layout_width="120dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="left"
-                android:paddingTop="10dp"
-                android:text="Birth Date"
-                android:textColor="#c9f9ff"
-                android:textSize="15sp" />
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
 
-            <EditText
-                android:id="@+id/birthdateG"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="left"
-                android:hint="-----------------------------"
-                android:inputType="text"
-                android:textColor="#c9f9ff" />
+                <TextView
+                    android:id="@+id/textlastnameG"
+                    android:layout_width="130dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:paddingTop="10dp"
+                    android:text="Last Name"
+                    android:textColor="#c9f9ff"
+                    android:textSize="15sp"
+                    android:layout_marginTop="10dp" />
 
-            <TextView
-                android:id="@+id/textNIC"
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:gravity="left"
-                android:paddingTop="10dp"
-                android:text="NIC"
-                android:textColor="#c9f9ff"
-                android:textSize="15sp" />
+                <EditText
+                    android:id="@+id/lastnameG"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="left"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    android:textColor="#c9f9ff" />
 
-            <EditText
-                android:id="@+id/NIC"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="left"
-                android:hint="-----------------------------"
-                android:inputType="text"
-                android:textColor="#c9f9ff" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/textaddress"
-                android:layout_width="130dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="left"
-                android:paddingTop="10dp"
-                android:text="Address"
-                android:textColor="#c9f9ff"
-                android:textSize="15sp" />
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
 
-            <EditText
-                android:id="@+id/address"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="left"
-                android:hint="-----------------------------"
-                android:inputType="text"
-                android:textColor="#c9f9ff" />
+                <TextView
+                    android:id="@+id/textbirthdateG"
+                    android:layout_width="130dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:paddingTop="10dp"
+                    android:text="Birth Date"
+                    android:textColor="#c9f9ff"
+                    android:textSize="15sp"
+                    android:layout_marginTop="10dp" />
 
-            <TextView
-                android:id="@+id/textnoofchildren"
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:gravity="left"
-                android:paddingTop="10dp"
-                android:text="No of Children"
-                android:textColor="#c9f9ff"
-                android:textSize="15sp" />
+                <EditText
+                    android:id="@+id/birthdateG"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="left"
+                    android:inputType="text"
+                    android:textColor="#c9f9ff" />
 
-            <EditText
-                android:id="@+id/noofchildren"
-                android:layout_width="wrap_content"
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="50dp"
-                android:gravity="left"
-                android:hint="-----------------------------"
-                android:inputType="number"
-                android:textColor="#c9f9ff" />
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:id="@+id/textNIC"
+                    android:layout_width="130dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:paddingTop="10dp"
+                    android:text="NIC"
+                    android:textColor="#c9f9ff"
+                    android:textSize="15sp"
+                    android:layout_marginTop="10dp" />
+
+                <EditText
+                    android:id="@+id/NIC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="left"
+                    android:inputType="text"
+                    android:textColor="#c9f9ff" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:id="@+id/textaddress"
+                    android:layout_width="130dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:paddingTop="10dp"
+                    android:text="Address"
+                    android:textColor="#c9f9ff"
+                    android:textSize="15sp"
+                    android:layout_marginTop="10dp" />
+
+                <EditText
+                    android:id="@+id/address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="left"
+                    android:inputType="text"
+                    android:textColor="#c9f9ff" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="50dp">
+
+                <TextView
+                    android:id="@+id/textnoofchildren"
+                    android:layout_width="130dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:paddingTop="10dp"
+                    android:text="No of Children"
+                    android:textColor="#c9f9ff"
+                    android:textSize="15sp"
+                    android:layout_marginTop="10dp" />
+
+                <EditText
+                    android:id="@+id/noofchildren"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="left"
+                    android:inputType="number"
+                    android:textColor="#c9f9ff" />
+
+            </LinearLayout>
+
+
 
             <Button
                 android:id="@+id/btnupdate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="50dp"
+                android:layout_marginBottom="60dp"
                 android:background="#501660"
                 android:text="Update details"
                 android:textColor="#c9f9ff"

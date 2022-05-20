@@ -104,12 +104,9 @@ public class Details extends AppCompatActivity {
                     gender.setText(res.getString(4));
                     currentweight.setText(res.getString(5));
                     currentheight.setText(res.getString(6));
-//                    birthweight.setText(res.getString(7));
+                    birthweight.setText(res.getString(7));
                 }
 
-                // for checking
-                // int IDwant =  myDB.readLastSavedID();
-                // firstname.setText(String.valueOf(IDwant));
             }
         });
 
@@ -165,9 +162,9 @@ public class Details extends AppCompatActivity {
                     String lastnameTXT = lastname.getText().toString();
                     String birthdateTXT = birthdate.getText().toString();
 
-                    int currentweightTXT = Integer.parseInt(currentweight.getText().toString());
-                    int currentheightTXT = Integer.parseInt(currentheight.getText().toString());
-                    int birthweightTXT = Integer.parseInt(birthweight.getText().toString());
+                    String currentweightTXT = currentweight.getText().toString();
+                    String currentheightTXT = currentheight.getText().toString();
+                    String birthweightTXT = birthweight.getText().toString();
 
                     // guardian
                     String firstnameGTXT = firstnameG.getText().toString();
