@@ -55,6 +55,7 @@ class DatabaseH extends SQLiteOpenHelper {
                 COLUMN_FNAME + " TEXT, " +
                 COLUMN_LNAME + " TEXT, " +
                 COLUMN_BIRTHDATE + " TEXT, " +
+                COLUMN_GENDER + " TEXT, " +
                 COLUMN_WEIGHT + " INTEGER, " +
 
                 COLUMN_HEIGHT + " INTEGER, " +
