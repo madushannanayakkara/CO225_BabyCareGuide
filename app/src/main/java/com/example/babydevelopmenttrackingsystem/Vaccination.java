@@ -200,7 +200,18 @@ public class Vaccination extends AppCompatActivity  {
 
 
 
-    
+    /*public String setDate(String date, int i, int noToAdd){
+
+        //To add months int i=2
+        //TO add weeks int i=1
+        String updated_date;
+
+        String before_update = date;
+
+        return updated_date;
+
+
+    }*/
 
     public String setDate(String date, int i, int noToAdd){
 
@@ -208,7 +219,12 @@ public class Vaccination extends AppCompatActivity  {
         String oldDate;
         oldDate = date;
 
-       
+        /*String[] parts = date.split(".");
+        String year = parts[0];
+        String month = parts[1];
+        String day = parts[2];
+
+        LocalDate datecal = LocalDate.parse(date);*/
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Calendar c = Calendar.getInstance();
