@@ -56,10 +56,10 @@ class DatabaseH extends SQLiteOpenHelper {
                 COLUMN_LNAME + " TEXT, " +
                 COLUMN_BIRTHDATE + " TEXT, " +
                 COLUMN_GENDER + " TEXT, " +
-                COLUMN_WEIGHT + " INTEGER, " +
+                COLUMN_WEIGHT + " TEXT, " +
 
-                COLUMN_HEIGHT + " INTEGER, " +
-                COLUMN_BIRTHWEIGHT + " INTEGER, " +
+                COLUMN_HEIGHT + " TEXT, " +
+                COLUMN_BIRTHWEIGHT + " TEXT, " +
 
                 "first_nameG" + " TEXT, " +
                 "last_nameG" + " TEXT, " +
@@ -101,7 +101,7 @@ class DatabaseH extends SQLiteOpenHelper {
     }
 
     // Add new baby using register form
-    void addBaby(String fname, String lname, String bdate, String gender, int weight, int height){
+    void addBaby(String fname, String lname, String bdate, String gender, String weight, String height){
         SQLiteDatabase db = this.getWritableDatabase();                 // get writeable database
         ContentValues cv = new ContentValues();                         // create content values
 
@@ -171,7 +171,7 @@ class DatabaseH extends SQLiteOpenHelper {
 
     // updating details according to Details page window
 
-    public Boolean updateuserdata (String first_name, String last_name, String birth_date, int current_weight, int current_height, int birth_weight,
+    public Boolean updateuserdata (String first_name, String last_name, String birth_date, String current_weight, String current_height, String birth_weight,
                                    String first_nameG, String last_nameG, String birth_dateG, String nic, String address, int no_of_children){
         SQLiteDatabase myDB= this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
