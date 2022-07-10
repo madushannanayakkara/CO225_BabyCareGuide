@@ -352,10 +352,26 @@ class DatabaseH extends SQLiteOpenHelper {
                 Toast.makeText(context, "Faild to Delete !!", Toast.LENGTH_SHORT);
             }
         } else {
-            long result = db.delete(TABLE_NAME,  "baby_id = ?", new String[]{String.valueOf(id)});
-            if(result == -1){
-                Toast.makeText(context, "Faild to Delete !!", Toast.LENGTH_SHORT);
+            if (replacedid == -1) {
+                long result = db.delete(TABLE_NAME,  "baby_id = ?", new String[]{String.valueOf(id)});
+                if(result == -1){
+                    Toast.makeText(context, "Faild to Delete !!", Toast.LENGTH_SHORT);
+                } else {
+                    Toast.makeText(context, "Successfully Deleteed !!", Toast.LENGTH_SHORT);
+                }
             } else {
+                String query1 = "DELETE FROM " + LASTSAVEDID;
+                String query2 = "DELETE FROM sqlite_sequence WHERE name='" + LASTSAVEDID + "'";
+
+                db.execSQL(query1);
+                db.execSQL(query2);
+
+                String query3 = "DELETE FROM " + TABLE_NAME;
+                String query4 = "DELETE FROM sqlite_sequence WHERE name='" + TABLE_NAME + "'";
+
+                db.execSQL(query3);
+                db.execSQL(query4);
+
                 Toast.makeText(context, "Successfully Deleteed !!", Toast.LENGTH_SHORT);
             }
         }
