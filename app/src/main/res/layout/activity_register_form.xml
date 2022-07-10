@@ -6,8 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".RegisterForm"
     android:id="@+id/parent"
-    android:padding="50dp">
-
+    android:padding="50dp"
+    >
+<!--    android:background="@android:color/background_dark"-->
 
     <TextView
         android:id="@+id/txtWelcome"
@@ -29,79 +30,149 @@
         android:textSize="25dp"
         android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/editTextFirstName"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtRegisterForm"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
         android:layout_marginTop="20dp"
-        android:ems="10"
-        android:hint="First Name"
-        android:inputType="text" />
+        android:gravity="center_vertical"
+        android:layout_below="@+id/txtRegisterForm"
+        android:id="@+id/editTextFirstNameL">
 
-    <EditText
-        android:id="@+id/editTextLastName"
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_baseline_person"/>
+
+        <EditText
+            android:id="@+id/editTextFirstName"
+            android:layout_marginLeft="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="First Name"
+            android:inputType="text" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="Last Name"
-        android:inputType="text"
-        android:layout_below="@+id/editTextFirstName" />
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical"
+        android:layout_below="@+id/editTextFirstNameL"
+        android:id="@+id/editTextLastNameL">
 
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_baseline_person"/>
+
+        <EditText
+            android:id="@+id/editTextLastName"
+            android:layout_marginLeft="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Last Name"
+            android:inputType="text"
+             />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical"
+        android:layout_below="@+id/editTextLastNameL"
+        android:id="@+id/editTextBirthDateL">
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_baseline_child_care"/>
 
     <EditText
         android:id="@+id/editTextBirthDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextLastName"
-        android:layout_marginTop="8dp"
+        android:layout_marginLeft="5dp"
         android:hint="Birth Date"
         android:inputType="text" />
 
-    <TextView
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=" Gender"
-        android:layout_marginTop="8dp"
-        android:id="@+id/txtGender"
-        android:textSize="18dp"
-        android:layout_below="@+id/editTextBirthDate"
-        />
-
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txtGender"
-        android:layout_centerHorizontal = "true"
         android:orientation="horizontal"
-        android:id="@+id/radioGroup">
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical"
+        android:layout_below="@+id/editTextBirthDateL"
+        android:id="@+id/radioGroupL">
 
-        <RadioButton
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_baseline_wc"/>
+
+        <TextView
+            android:id="@+id/txtGender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/rbMale"
-            android:text="Male"
-            android:checked="true"
-            />
+            android:layout_marginLeft="5dp"
+            android:text=" Gender"
+            android:textSize="18dp" />
 
-        <RadioButton
+
+
+        <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/rbFemale"
-            android:text="Female"
-            android:layout_marginLeft="20dp"/>
-    </RadioGroup>
+            android:layout_below="@+id/txtGender"
+            android:layout_centerHorizontal = "true"
+            android:orientation="horizontal"
+            android:id="@+id/radioGroup">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rbMale"
+                android:text="Male"
+                android:checked="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rbFemale"
+                android:text="Female"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="5dp"/>
+        </RadioGroup>
+
+    </LinearLayout>
 
     <EditText
+        android:id="@+id/editTextCurrentWeight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/radioGroupL"
+        android:layout_marginTop="18dp"
         android:hint="Current Weight"
-        android:layout_marginTop="8dp"
-        android:id="@+id/editTextCurrentWeight"
-        android:inputType="text"
-        android:layout_below="@+id/radioGroup"
-        />
+        android:inputType="text" />
 
     <EditText
         android:layout_width="match_parent"
@@ -113,19 +184,34 @@
         android:layout_below="@+id/editTextCurrentWeight"
         />
 
-    <Button
-        android:id="@+id/buttonRegister"
+    <LinearLayout
+        android:id="@+id/buttonRegisterL"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextCurrentHeight"
-        android:layout_marginTop="28dp"
-        android:text="Register" />
+        android:layout_height="80dp"
 
+        android:layout_below="@+id/editTextCurrentHeight"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonRegister"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextCurrentHeight"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_btn"
+            android:drawableLeft="@drawable/ic_baseline_how_to_reg"
+            android:paddingLeft="20dp"
+            android:text="Register"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:backgroundTint="@color/purple_200"/>
+    </LinearLayout>
     <TextView
         android:id="@+id/btnRequired"
         android:layout_width="33dp"
         android:layout_height="19dp"
-        android:layout_below="@+id/buttonRegister"
+        android:layout_below="@+id/buttonRegisterL"
         android:layout_marginTop="10dp"
         android:textColor="#F40F0F"
         android:textColorHighlight="#E31717"
