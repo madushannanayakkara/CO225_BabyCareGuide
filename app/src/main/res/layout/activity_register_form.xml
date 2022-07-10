@@ -54,10 +54,10 @@
         android:id="@+id/editTextBirthDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextLastName"
         android:layout_marginTop="8dp"
         android:hint="Birth Date"
-        android:inputType="text" />
+        android:inputType="text"
+        android:layout_below="@+id/editTextLastName"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -75,15 +75,14 @@
         android:layout_below="@+id/txtGender"
         android:layout_centerHorizontal = "true"
         android:orientation="horizontal"
-        android:id="@+id/radioGroup">
+        android:id="@+id/rbGender">
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/rbMale"
             android:text="Male"
-            android:checked="true"
-            />
+            android:checked="true"/>
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -100,7 +99,7 @@
         android:layout_marginTop="8dp"
         android:id="@+id/editTextCurrentWeight"
         android:inputType="text"
-        android:layout_below="@+id/radioGroup"
+        android:layout_below="@+id/rbGender"
         />
 
     <EditText
@@ -117,9 +116,9 @@
         android:id="@+id/buttonRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Register"
         android:layout_below="@+id/editTextCurrentHeight"
-        android:layout_marginTop="28dp"
-        android:text="Register" />
+        android:layout_marginTop="28dp"/>
 
     <TextView
         android:id="@+id/btnRequired"

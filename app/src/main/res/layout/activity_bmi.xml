@@ -18,19 +18,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="35dp">
+            android:layout_marginTop="35dp"
+            android:layout_marginStart="40dp">
 
             <TextView
                 android:id="@+id/txtHeight"
-                android:layout_width="93dp"
+                android:layout_width="112dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
                 android:layout_marginRight="33dp"
-                android:fontFamily="@font/bevan"
                 android:text="Height(cm)"
                 android:textColor="@color/white"
-                android:textSize="18dp" />
+                android:textSize="21dp" />
 
             <EditText
                 android:id="@+id/etxtHeight"
@@ -40,26 +39,25 @@
                 android:layout_toRightOf="@+id/txtHeight"
                 android:background="@drawable/button_shape"
                 android:backgroundTint="#460957"
-                android:ems="9"
+                android:ems="10"
                 android:gravity="center"
                 android:hint="Enter current height"
                 android:inputType="textPersonName"
                 android:textColor="@color/white"
                 android:textColorHint="@color/grey"
-                android:textSize="18dp"
-                android:textStyle="italic" />
+
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/txtWeight"
-                android:layout_width="93dp"
+                android:layout_width="112dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/txtHeight"
-                android:layout_marginTop="65dp"
+                android:layout_marginTop="60dp"
                 android:layout_marginRight="30dp"
-                android:fontFamily="@font/bevan"
                 android:text="Weight(Kg)"
                 android:textColor="@color/white"
-                android:textSize="18dp" />
+                android:textSize="21dp" />
 
             <EditText
                 android:id="@+id/etxtWeight"
@@ -70,14 +68,13 @@
                 android:layout_toRightOf="@+id/txtWeight"
                 android:background="@drawable/button_shape"
                 android:backgroundTint="#460957"
-                android:ems="9"
+                android:ems="10"
                 android:gravity="center"
                 android:hint="Enter current Weight"
                 android:inputType="textPersonName"
                 android:textColor="@color/white"
                 android:textColorHint="@color/grey"
-                android:textSize="18dp"
-                android:textStyle="italic" />
+                android:textSize="20dp" />
 
         </RelativeLayout>
 
@@ -85,7 +82,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/pnlInput"
-            android:layout_marginTop="80dp">
+            android:layout_marginTop="60dp">
 
             <TextView
                 android:id="@+id/txtBMIValue"
@@ -93,10 +90,9 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginRight="30dp"
-                android:text="BMI VALUE"
+                android:text="BMI Value"
                 android:textColor="@color/white"
-                android:textSize="22dp"
-                android:textStyle="bold" />
+                android:textSize="22dp" />
 
             <TextView
                 android:id="@+id/txtBMIValueDisplay"
@@ -120,17 +116,16 @@
                 android:layout_marginTop="55dp"
                 android:layout_marginRight="30dp"
                 android:gravity="center"
-                android:text="WITHIN THE STANDARD RATE OR NOT"
+                android:text="Within the standard rate or not"
                 android:textColor="@color/grey"
-                android:textSize="19dp"
-                android:textStyle="bold" />
+                android:textSize="22dp" />
 
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/txtLabel"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="40dp">
+                android:layout_marginTop="20dp">
 
                 <TextView
                     android:id="@+id/txt_normal_weight"
@@ -139,7 +134,7 @@
                     android:layout_marginTop="25dp"
                     android:background="@drawable/check_mark"
                     android:backgroundTint="@color/highlightblue"
-                    android:visibility="invisible" />
+                    android:visibility="invisible"/>
 
                 <TextView
                     android:id="@+id/txt_obese"
@@ -176,8 +171,8 @@
                     android:layout_marginTop="27dp"
                     android:layout_toRightOf="@+id/txt_underweight"
                     android:gravity="center"
-                    android:textColor="@color/grey"
-                    android:textSize="18dp" />
+                    android:textColor="@color/white"
+                    android:textSize="24dp" />
 
             </RelativeLayout>
 
@@ -209,7 +204,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="?android:attr/windowBackground"
-        app:menu="@menu/bottom_navigation" />
+        app:menu="@menu/bottom_navigation"
+        android:background="?android:attr/windowBackground"/>
 
 </RelativeLayout>
