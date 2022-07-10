@@ -41,6 +41,16 @@ public class RegisterForm extends AppCompatActivity implements View.OnClickListe
             case R.id.editTextLastName:
                 Toast.makeText(this, "Type last name of your baby here", Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.editTextBirthDate:
+                Toast.makeText(this, "Please enter in this format ex: 2000/02/02", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.editTextCurrentWeight:
+                Toast.makeText(this, "Please enter only the VALUE in kg(KILOGRAM)", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.editTextCurrentHeight:
+                Toast.makeText(this, "Please enter only the VALUE in m(METERS)", Toast.LENGTH_SHORT).show();
+                break;
+
             default:
                 break;
         }
@@ -54,7 +64,8 @@ public class RegisterForm extends AppCompatActivity implements View.OnClickListe
         initViews();
 
         txtFirstName.setOnClickListener(this);
-        txtLastName.setOnClickListener(this);
+        txtLastName.setOnClickListener(this); txtBirthdate.setOnClickListener(this);
+        txtCurrentWeight.setOnClickListener(this); txtCurrentHeight.setOnClickListener(this);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId){
