@@ -95,8 +95,8 @@ public class RegisterForm extends AppCompatActivity implements View.OnClickListe
                     radioButton = (RadioButton)findViewById(selectedGender);
 
                     DatabaseH myDB = new DatabaseH(RegisterForm.this);
-                    myDB.addBaby(txtFirstName.getText().toString().trim(),
-                            txtLastName.getText().toString().trim(),
+                    myDB.addBaby(toTitleCase(txtFirstName.getText().toString()),
+                            toTitleCase(txtLastName.getText().toString()),
                             txtBirthdate.getText().toString().trim(),
                             radioButton.getText().toString().trim(),
                             txtCurrentWeight.getText().toString().trim(),
@@ -106,6 +106,32 @@ public class RegisterForm extends AppCompatActivity implements View.OnClickListe
             }
         });
 
+    }
+
+    private static String toTitleCase(String str) {
+
+        if(str == null || str.isEmpty())
+            return "";
+
+        if(str.length() == 1)
+            return str.toUpperCase();
+
+        String[] parts = str.split(" ");
+
+        StringBuilder sb = new StringBuilder( str.length() );
+
+        for(String part : parts){
+
+            if(part.length() > 1 )
+                sb.append( part.substring(0, 1).toUpperCase() )
+                        .append( part.substring(1).toLowerCase() );
+            else
+                sb.append(part.toUpperCase());
+
+            sb.append(" ");
+        }
+
+        return sb.toString().trim();
     }
 
     private boolean validateData(){
