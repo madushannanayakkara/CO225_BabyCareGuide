@@ -78,11 +78,12 @@ public class CustomAdpter extends RecyclerView.Adapter<CustomAdpter.MyViewHolder
                                                 String.valueOf(lname.get(holder.getAbsoluteAdapterPosition() - 1)));
                                         txtv_title.setText(dh.readAccName(replacedid));
                                     } else {
-                                        if(fname.size() > 0){
+                                        if(fname.size() > 1){
                                             replacedid = dh.findID(String.valueOf(fname.get(holder.getAbsoluteAdapterPosition() + 1)),
                                                     String.valueOf(lname.get(holder.getAbsoluteAdapterPosition() + 1)));
                                             txtv_title.setText(dh.readAccName(replacedid));
                                         }else {
+                                            replacedid = -2;
                                             txtv_title.setText("Account");
                                             bottomSheetDialog.dismiss();
                                         }
