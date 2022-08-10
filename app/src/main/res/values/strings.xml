@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Baby Development Tracking System</string>
+    <string name="app_name">BabyCareGuide</string>
     <string name="hc_name">Firstname LastName</string>
 
     <string name="col0">Done</string>

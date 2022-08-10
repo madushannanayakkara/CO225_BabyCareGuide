@@ -41,6 +41,16 @@ public class RegisterForm extends AppCompatActivity implements View.OnClickListe
             case R.id.editTextLastName:
                 Toast.makeText(this, "Type last name of your baby here", Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.editTextBirthDate:
+                Toast.makeText(this, "Please enter in this format ex: 2000/02/02", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.editTextCurrentWeight:
+                Toast.makeText(this, "Please enter only the VALUE in kg(KILOGRAM)", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.editTextCurrentHeight:
+                Toast.makeText(this, "Please enter only the VALUE in m(METERS)", Toast.LENGTH_SHORT).show();
+                break;
+
             default:
                 break;
         }
@@ -54,7 +64,8 @@ public class RegisterForm extends AppCompatActivity implements View.OnClickListe
         initViews();
 
         txtFirstName.setOnClickListener(this);
-        txtLastName.setOnClickListener(this);
+        txtLastName.setOnClickListener(this); txtBirthdate.setOnClickListener(this);
+        txtCurrentWeight.setOnClickListener(this); txtCurrentHeight.setOnClickListener(this);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId){
@@ -84,16 +95,43 @@ public class RegisterForm extends AppCompatActivity implements View.OnClickListe
                     radioButton = (RadioButton)findViewById(selectedGender);
 
                     DatabaseH myDB = new DatabaseH(RegisterForm.this);
-                    myDB.addBaby(txtFirstName.getText().toString().trim(),
-                            txtLastName.getText().toString().trim(),
+                    myDB.addBaby(toTitleCase(txtFirstName.getText().toString()),
+                            toTitleCase(txtLastName.getText().toString()),
                             txtBirthdate.getText().toString().trim(),
                             radioButton.getText().toString().trim(),
-                            Integer.valueOf(txtCurrentWeight.getText().toString().trim()),
-                            Integer.valueOf(txtCurrentHeight.getText().toString().trim()));
+                            txtCurrentWeight.getText().toString().trim(),
+                            txtCurrentHeight.getText().toString().trim());
+
                 }
             }
         });
 
+    }
+
+    private static String toTitleCase(String str) {
+
+        if(str == null || str.isEmpty())
+            return "";
+
+        if(str.length() == 1)
+            return str.toUpperCase();
+
+        String[] parts = str.split(" ");
+
+        StringBuilder sb = new StringBuilder( str.length() );
+
+        for(String part : parts){
+
+            if(part.length() > 1 )
+                sb.append( part.substring(0, 1).toUpperCase() )
+                        .append( part.substring(1).toLowerCase() );
+            else
+                sb.append(part.toUpperCase());
+
+            sb.append(" ");
+        }
+
+        return sb.toString().trim();
     }
 
     private boolean validateData(){

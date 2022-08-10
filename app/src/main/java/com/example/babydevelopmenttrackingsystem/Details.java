@@ -79,63 +79,87 @@ public class Details extends AppCompatActivity {
         address = findViewById(R.id.address);
         noofchildren = findViewById(R.id.noofchildren);
 
-        btnB = findViewById(R.id.btnB);
-        btnG = findViewById(R.id.btnG);
         btnupdate = findViewById(R.id.btnupdate);
 
         myDB = new DatabaseH(this);
 
 
         // loading and display current baby details
+        Cursor res = myDB.readLastBabyData();
+        if (res.getCount()==0){
+            Toast.makeText(Details.this, "No entry exists", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-        btnB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Cursor res = myDB.readLastBabyData();
-                if (res.getCount()==0){
-                    Toast.makeText(Details.this, "No entry exists", Toast.LENGTH_SHORT).show();
-                    return;
-                }
+        while (res.moveToNext()){
+            firstname.setText(res.getString(1));
+            lastname.setText(res.getString(2));
+            birthdate.setText(res.getString(3));
+            gender.setText(res.getString(4));
+            currentweight.setText(res.getString(5));
+            currentheight.setText(res.getString(6));
+            birthweight.setText(res.getString(7));
+        }
 
-                while (res.moveToNext()){
-                    firstname.setText(res.getString(1));
-                    lastname.setText(res.getString(2));
-                    birthdate.setText(res.getString(3));
-                    gender.setText(res.getString(4));
-                    currentweight.setText(res.getString(5));
-                    currentheight.setText(res.getString(6));
+//        btnB.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Cursor res = myDB.readLastBabyData();
+//                if (res.getCount()==0){
+//                    Toast.makeText(Details.this, "No entry exists", Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
+//
+//                while (res.moveToNext()){
+//                    firstname.setText(res.getString(1));
+//                    lastname.setText(res.getString(2));
+//                    birthdate.setText(res.getString(3));
+//                    gender.setText(res.getString(4));
+//                    currentweight.setText(res.getString(5));
+//                    currentheight.setText(res.getString(6));
 //                    birthweight.setText(res.getString(7));
-                }
-
-                // for checking
-                // int IDwant =  myDB.readLastSavedID();
-                // firstname.setText(String.valueOf(IDwant));
-            }
-        });
+//                }
+//
+//            }
+//        });
 
         // loading and display current baby's guardian details
+        Cursor res1 = myDB.readLastBabyData();
+        if (res1.getCount()==0){
+            Toast.makeText(Details.this, "No entry exists", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-        btnG.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Cursor res = myDB.readLastBabyData();
-                if (res.getCount()==0){
-                    Toast.makeText(Details.this, "No entry exists", Toast.LENGTH_SHORT).show();
-                    return;
-                }
+        while (res1.moveToNext()){
+            firstnameG.setText(res1.getString(8));
+            lastnameG.setText(res1.getString(9));
+            birthdateG.setText(res1.getString(10));
+            NIC.setText(res1.getString(11));
+            address.setText(res1.getString(12));
+            noofchildren.setText(res1.getString(13));
 
-                while (res.moveToNext()){
-                    firstnameG.setText(res.getString(8));
-                    lastnameG.setText(res.getString(9));
-                    birthdateG.setText(res.getString(10));
-                    NIC.setText(res.getString(11));
-                    address.setText(res.getString(12));
-                    noofchildren.setText(res.getString(13));
-
-                }
-
-            }
-        });
+        }
+//        btnG.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Cursor res = myDB.readLastBabyData();
+//                if (res.getCount()==0){
+//                    Toast.makeText(Details.this, "No entry exists", Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
+//
+//                while (res.moveToNext()){
+//                    firstnameG.setText(res.getString(8));
+//                    lastnameG.setText(res.getString(9));
+//                    birthdateG.setText(res.getString(10));
+//                    NIC.setText(res.getString(11));
+//                    address.setText(res.getString(12));
+//                    noofchildren.setText(res.getString(13));
+//
+//                }
+//
+//            }
+//        });
 
 
         // updating details
@@ -165,9 +189,9 @@ public class Details extends AppCompatActivity {
                     String lastnameTXT = lastname.getText().toString();
                     String birthdateTXT = birthdate.getText().toString();
 
-                    int currentweightTXT = Integer.parseInt(currentweight.getText().toString());
-                    int currentheightTXT = Integer.parseInt(currentheight.getText().toString());
-                    int birthweightTXT = Integer.parseInt(birthweight.getText().toString());
+                    String currentweightTXT = currentweight.getText().toString();
+                    String currentheightTXT = currentheight.getText().toString();
+                    String birthweightTXT = birthweight.getText().toString();
 
                     // guardian
                     String firstnameGTXT = firstnameG.getText().toString();

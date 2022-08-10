@@ -55,10 +55,11 @@ class DatabaseH extends SQLiteOpenHelper {
                 COLUMN_FNAME + " TEXT, " +
                 COLUMN_LNAME + " TEXT, " +
                 COLUMN_BIRTHDATE + " TEXT, " +
-                COLUMN_WEIGHT + " INTEGER, " +
+                COLUMN_GENDER + " TEXT, " +
+                COLUMN_WEIGHT + " TEXT, " +
 
-                COLUMN_HEIGHT + " INTEGER, " +
-                COLUMN_BIRTHWEIGHT + " INTEGER, " +
+                COLUMN_HEIGHT + " TEXT, " +
+                COLUMN_BIRTHWEIGHT + " TEXT, " +
 
                 "first_nameG" + " TEXT, " +
                 "last_nameG" + " TEXT, " +
@@ -85,6 +86,7 @@ class DatabaseH extends SQLiteOpenHelper {
         db.execSQL(query1);
         db.execSQL(query2);
         db.execSQL(query3);
+        db.execSQL(query4);
 
     }
 
@@ -99,7 +101,7 @@ class DatabaseH extends SQLiteOpenHelper {
     }
 
     // Add new baby using register form
-    void addBaby(String fname, String lname, String bdate, String gender, int weight, int height){
+    void addBaby(String fname, String lname, String bdate, String gender, String weight, String height){
         SQLiteDatabase db = this.getWritableDatabase();                 // get writeable database
         ContentValues cv = new ContentValues();                         // create content values
 
@@ -119,14 +121,14 @@ class DatabaseH extends SQLiteOpenHelper {
         }
     }
 
-    public void addVaccineData(String name, String done, int vaccined/*int userId*/){
+    public void addVaccineData(String name, String done, int vaccined,int userId){
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
 
         contentValues.put(VACCINE, name);
-        //contentValues.put(USERID, userId);
+        contentValues.put(USERID, userId);
         contentValues.put(DONE, done);
 
         /* Save to the table*/
@@ -146,10 +148,30 @@ class DatabaseH extends SQLiteOpenHelper {
 
     }
 
+    public void addNotifyData(String timePeriod, int userID){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(TIMEPERIOD, timePeriod);
+        cv.put(USERID, userID);
+
+
+        long result = db.insert(TABLE4, null, cv);
+
+        if (result == -1){
+            Toast.makeText(context, "Failed!", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Added successfully !!", Toast.LENGTH_SHORT).show();
+        }
+
+
+    }
+
 
     // updating details according to Details page window
 
-    public Boolean updateuserdata (String first_name, String last_name, String birth_date, int current_weight, int current_height, int birth_weight,
+    public Boolean updateuserdata (String first_name, String last_name, String birth_date, String current_weight, String current_height, String birth_weight,
                                    String first_nameG, String last_nameG, String birth_dateG, String nic, String address, int no_of_children){
         SQLiteDatabase myDB= this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -305,47 +327,55 @@ class DatabaseH extends SQLiteOpenHelper {
         String query = "SELECT " + COLUMN_BIRTHDATE + " FROM " + TABLE_NAME + " WHERE " + COLUMN_ID + " = " + ID ;
         SQLiteDatabase db = this.getReadableDatabase();
 
-        if(db != null){
-            Cursor cursor = db.rawQuery(query, null);
-            if(cursor.getCount() == 0){
-                return null;
-            } else {
-                return cursor.getString(0);
-            }
-        }
-        return null;
+        Cursor cursor = db.rawQuery(query, null);
+        cursor.moveToFirst();
+
+        return cursor.getString(0);
 
     }
 
-//    void deleteRow(int id, int replacedid){
-//        int last_saved_id = readLastSavedID();
-//        SQLiteDatabase db = this.getWritableDatabase();
-//
-//        if(last_saved_id != id){
-//            long result = db.delete(TABLE_NAME,  "baby_id = ?", new String[]{String.valueOf(id)});
-//            if(result == -1){
-//                Toast.makeText(context, "Faild to Delete !!", Toast.LENGTH_SHORT);
-//            } else {
-//                Toast.makeText(context, "Successfully Deleteed !!", Toast.LENGTH_SHORT);
-//            }
-//        } else{
-//            long result = db.delete(LASTSAVEDID,  "baby_id = ?", new String[]{String.valueOf(id)});
-//            if(result != -1){
-//                result = db.delete(TABLE_NAME,  "baby_id = ?", new String[]{String.valueOf(id)});
-//                if(result != -1){
-//                    Toast.makeText(context, "Successfully Deleteed !!", Toast.LENGTH_SHORT);
-//                    if(replacedid > 0){
-//                        updateLastSavedID(replacedid);
-//                    }
-//                } else {
-//                    Toast.makeText(context, "Faild to Delete !!", Toast.LENGTH_SHORT);
-//                    updateLastSavedID(id);
-//                }
-//            } else {
-//                Toast.makeText(context, "Faild to Delete !!", Toast.LENGTH_SHORT);
-//            }
-//        }
-//
-//    }
+    void deleteRow(int id, int replacedid){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        if(replacedid > 0){
+            long result = db.delete(LASTSAVEDID,  "baby_id = ?", new String[]{String.valueOf(id)});
+            if(result != -1){
+                result = db.delete(TABLE_NAME,  "baby_id = ?", new String[]{String.valueOf(id)});
+                if(result != -1){
+                    Toast.makeText(context, "Successfully Deleteed !!", Toast.LENGTH_SHORT);
+                    updateLastSavedID(replacedid);
+                } else {
+                    Toast.makeText(context, "Faild to Delete !!", Toast.LENGTH_SHORT);
+                    updateLastSavedID(id);
+                }
+            } else {
+                Toast.makeText(context, "Faild to Delete !!", Toast.LENGTH_SHORT);
+            }
+        } else {
+            if (replacedid == -1) {
+                long result = db.delete(TABLE_NAME,  "baby_id = ?", new String[]{String.valueOf(id)});
+                if(result == -1){
+                    Toast.makeText(context, "Faild to Delete !!", Toast.LENGTH_SHORT);
+                } else {
+                    Toast.makeText(context, "Successfully Deleteed !!", Toast.LENGTH_SHORT);
+                }
+            } else {
+                String query1 = "DELETE FROM " + LASTSAVEDID;
+                String query2 = "DELETE FROM sqlite_sequence WHERE name='" + LASTSAVEDID + "'";
+
+                db.execSQL(query1);
+                db.execSQL(query2);
+
+                String query3 = "DELETE FROM " + TABLE_NAME;
+                String query4 = "DELETE FROM sqlite_sequence WHERE name='" + TABLE_NAME + "'";
+
+                db.execSQL(query3);
+                db.execSQL(query4);
+
+                Toast.makeText(context, "Successfully Deleteed !!", Toast.LENGTH_SHORT);
+            }
+        }
+
+    }
 
 }
