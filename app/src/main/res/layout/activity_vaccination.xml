@@ -67,26 +67,26 @@
             android:textSize="20sp"
             android:textStyle="italic" />
 
-        <Button
-            android:id="@+id/calcButton"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_below="@+id/date"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:background="#501660"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="5dp"
-            android:text="@string/button"
-            android:textColor="#c9f9ff"
-            android:textSize="15sp" />
+<!--        <Button-->
+<!--            android:id="@+id/calcButton"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:layout_below="@+id/date"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:background="#501660"-->
+<!--            android:paddingHorizontal="10dp"-->
+<!--            android:paddingVertical="5dp"-->
+<!--            android:text="@string/button"-->
+<!--            android:textColor="#c9f9ff"-->
+<!--            android:textSize="15sp" />-->
 
 
         <FrameLayout
             android:id="@+id/notification"
             android:layout_width="401dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/calcButton"
+            android:layout_below="@+id/date"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="10dp" />
