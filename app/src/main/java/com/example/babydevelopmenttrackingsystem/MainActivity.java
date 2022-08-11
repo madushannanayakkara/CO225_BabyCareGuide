@@ -1,11 +1,16 @@
 package com.example.babydevelopmenttrackingsystem;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -21,10 +26,11 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private BottomNavigationView bottomNav;
-    private Button btnDetails, btnVaccination, btnBMI, btnSettings;
+    private Button btnDetails, btnVaccination, btnBMI, btnSettings, btnChangeLang;
     private TextView txtv_title;
     private RecyclerView recylerview;
 
@@ -35,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        loadLocale();
         setContentView(R.layout.activity_main);
 
         dh = new DatabaseH(MainActivity.this);
@@ -115,6 +122,69 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         txtv_title.setText(dh.readAccName(dh.readLastSavedID()));
 
+        btnChangeLang = (Button) findViewById(R.id.btnChangeLang);
+        btnChangeLang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // alertDialog lang list
+                showChangeLanguageDialog();
+                
+            }
+        });
+
+    }
+
+    private void showChangeLanguageDialog() {
+        final String[] listItems = {"සිංහල", "தமிழ்", "English"};
+        AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
+        mBuilder.setTitle("Choose Language ...");
+        mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                if (i == 0){
+                    setlocale("si");
+                    recreate();
+                }
+                else if (i == 1){
+                    setlocale("ta");
+                    recreate();
+                }
+                else if (i == 2){
+                    setlocale("en");
+                    recreate();
+                }
+
+                // dismiss alert dialog when lang was selected
+                dialogInterface.dismiss();
+
+            }
+        });
+
+        AlertDialog mDialog = mBuilder.create();
+        // show alert dialog
+        mDialog.show();
+
+    }
+
+    private void setlocale(String lang) {
+        Locale locale = new Locale(lang);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+
+        // save data to shared preferences
+        SharedPreferences.Editor editor = getSharedPreferences("Settings", MODE_PRIVATE).edit();
+        editor.putString("My_Lang", lang);
+        editor.apply();
+
+    }
+
+    // load language saved in shared preferences
+    public void loadLocale(){
+        SharedPreferences prefs = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
+        String language = prefs.getString("My_Lang", "");
+        setlocale(language);
     }
 
     @Override
