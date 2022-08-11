@@ -12,7 +12,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -25,8 +27,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Vaccination extends AppCompatActivity  {
 
-    private CheckBox cb1, cb2, cb3, cb4, cb5, cb6, cb7, cb8, cb9;
-    private Button calcButton;
+    private CheckBox[] cb_arr = new CheckBox[9];
+//    private Button calcButton;
     private TextView text, vac;
     private DatabaseH databaseH;
     private int[] count = {0,0,0,0,0,0,0,0,0};
@@ -73,132 +75,177 @@ public class Vaccination extends AppCompatActivity  {
         });
 
         //Variables used to calculate the next vaccination date
-        cb1 = findViewById(R.id.cb1);
-        cb2 = findViewById(R.id.cb2);
-        cb3 = findViewById(R.id.cb3);
-        cb4 = findViewById(R.id.cb4);
-        cb5 = findViewById(R.id.cb5);
-        cb6 = findViewById(R.id.cb6);
-        cb7 = findViewById(R.id.cb7);
-        cb8 = findViewById(R.id.cb8);
-        cb9 = findViewById(R.id.cb9);
-        calcButton = findViewById(R.id.calcButton);
+
+        cb_arr[0] = findViewById(R.id.cb1);
+        cb_arr[1] = findViewById(R.id.cb2);
+        cb_arr[2] = findViewById(R.id.cb3);
+        cb_arr[3] = findViewById(R.id.cb4);
+        cb_arr[4] = findViewById(R.id.cb5);
+        cb_arr[5] = findViewById(R.id.cb6);
+        cb_arr[6] = findViewById(R.id.cb7);
+        cb_arr[7] = findViewById(R.id.cb8);
+        cb_arr[8] = findViewById(R.id.cb9);
+
+//        calcButton = findViewById(R.id.calcButton);
         text = findViewById(R.id.date);
+
+//        int id = databaseH.readLastSavedID();
+//        String d1 = databaseH.getDate(id);
+
+        /*String d1 = "2017.01.02";*/
+
+        for (int i=0; i<9; i++){
+            cb_arr[i].setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                    if (b) {
+                        setNextVaccDate();
+                    } else {
+                        text.setText("");
+                        setNextVaccDate();
+                    }
+                }
+            });
+        }
+
+        int id = databaseH.readLastSavedID();
+        if (id > 0){
+            for (int j=0; j<databaseH.readLastVaccination(id); j++) {
+                cb_arr[j].setChecked(true);
+            }
+        }
+
+        setNextVaccDate();
+
+//        calcButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                setNextVaccDate(id, d1);
+//
+//            }
+//        });
+
+    }
+
+    private void setNextVaccDate(){
 
         int id = databaseH.readLastSavedID();
         String d1 = databaseH.getDate(id);
 
-        /*String d1 = "2017.01.02";*/
+        if(cb_arr[8].isChecked()){
 
+            vac = findViewById(R.id.r102);
 
-        calcButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+            String strDate = setDate(d1, 2, 60);
+            text.setText(strDate);
 
-               // calcButton.setText(d1);
+            vaccined = count[0];
+            count[0]++;
 
-                if(cb9.isChecked()){
+            databaseH.addVaccineData(vac.getText().toString().trim(),"done",vaccined,id,9);
+        }
+        else if(cb_arr[7].isChecked()){
 
-                    vac = findViewById(R.id.r102);
+            vac = findViewById(R.id.r92);
 
-                    String strDate = setDate(d1, 2, 60);
-                    text.setText(strDate);
+            String strDate = setDate(d1, 2, 36);
+            text.setText(strDate);
 
-                    vaccined = count[0];
-                    count[0]++;
-                }
-                else if(cb8.isChecked()){
+            vaccined = count[1];
+            count[1]++;
 
-                    vac = findViewById(R.id.r92);
+            databaseH.addVaccineData(vac.getText().toString().trim(),"done",vaccined,id,8);
+        }
+        else if(cb_arr[6].isChecked()){
 
-                    String strDate = setDate(d1, 2, 36);
-                    text.setText(strDate);
+            vac = findViewById(R.id.r82);
 
-                    vaccined = count[1];
-                    count[1]++;
-                }
-                else if(cb7.isChecked()){
+            String strDate = setDate(d1, 2, 18);
+            text.setText(strDate);
 
-                    vac = findViewById(R.id.r82);
+            vaccined = count[2];
+            count[2]++;
 
-                    String strDate = setDate(d1, 2, 18);
-                    text.setText(strDate);
+            databaseH.addVaccineData(vac.getText().toString().trim(),"done",vaccined,id,7);
+        }
+        else if(cb_arr[5].isChecked()){
 
-                    vaccined = count[2];
-                    count[2]++;
-                }
-                else if(cb6.isChecked()){
+            vac = findViewById(R.id.r72);
 
-                    vac = findViewById(R.id.r72);
+            String strDate = setDate(d1, 2, 12);
+            text.setText(strDate);
 
-                    String strDate = setDate(d1, 2, 12);
-                    text.setText(strDate);
+            vaccined = count[3];
+            count[3]++;
 
-                    vaccined = count[3];
-                    count[3]++;
-                }
-                else if(cb5.isChecked()){
+            databaseH.addVaccineData(vac.getText().toString().trim(),"done",vaccined,id,6);
+        }
+        else if(cb_arr[4].isChecked()){
 
-                    vac = findViewById(R.id.r62);
+            vac = findViewById(R.id.r62);
 
-                    String strDate = setDate(d1, 2, 9);
-                    text.setText(strDate);
+            String strDate = setDate(d1, 2, 9);
+            text.setText(strDate);
 
-                    vaccined = count[4];
-                    count[4]++;
-                }
-                else if(cb4.isChecked()){
+            vaccined = count[4];
+            count[4]++;
 
-                    vac = findViewById(R.id.r52);
+            databaseH.addVaccineData(vac.getText().toString().trim(),"done",vaccined,id,5);
+        }
+        else if(cb_arr[3].isChecked()){
 
-                    String strDate = setDate(d1, 2, 6);
-                    text.setText(strDate);
+            vac = findViewById(R.id.r52);
 
-                    vaccined = count[5];
-                    count[5]++;
-                }
-                else if(cb3.isChecked()){
+            String strDate = setDate(d1, 2, 6);
+            text.setText(strDate);
 
-                    vac = findViewById(R.id.r42);
+            vaccined = count[5];
+            count[5]++;
 
-                    String strDate = setDate(d1, 2, 4);
-                    text.setText(strDate);
+            databaseH.addVaccineData(vac.getText().toString().trim(),"done",vaccined,id,4);
+        }
+        else if(cb_arr[2].isChecked()){
 
-                    vaccined = count[6];
-                    count[6]++;
-                }
-                else if(cb2.isChecked()){
+            vac = findViewById(R.id.r42);
 
-                    vac = findViewById(R.id.r32);
+            String strDate = setDate(d1, 2, 4);
+            text.setText(strDate);
 
-                    String strDate = setDate(d1, 2, 2);
-                    text.setText(strDate);
+            vaccined = count[6];
+            count[6]++;
 
-                    vaccined = count[7];
-                    count[7]++;
-                }
-                else if(cb1.isChecked()){
+            databaseH.addVaccineData(vac.getText().toString().trim(),"done",vaccined,id,3);
+        }
+        else if(cb_arr[1].isChecked()){
 
-                    vac = findViewById(R.id.r22);
+            vac = findViewById(R.id.r32);
 
-                    String strDate = setDate(d1, 1, 14);
-                    //calcButton.setText(strDate);
-                    text.setText(strDate);
+            String strDate = setDate(d1, 2, 2);
+            text.setText(strDate);
 
-                    vaccined = count[8];
-                    count[8]++;
+            vaccined = count[7];
+            count[7]++;
 
-                }
+            databaseH.addVaccineData(vac.getText().toString().trim(),"done",vaccined,id,2);
+        }
+        else if(cb_arr[0].isChecked()){
 
-                databaseH.addVaccineData(vac.getText().toString().trim(),"done",vaccined,id);
+            vac = findViewById(R.id.r22);
 
-            }
-        });
+            String strDate = setDate(d1, 1, 14);
+            //calcButton.setText(strDate);
+            text.setText(strDate);
 
+            vaccined = count[8];
+            count[8]++;
 
+            databaseH.addVaccineData(vac.getText().toString().trim(),"done",vaccined,id,1);
+
+        }
+        else {
+            Toast.makeText(Vaccination.this, "It seems that your baby is not yet vaccinated", Toast.LENGTH_LONG).show();
+        }
     }
-
-
 
     /*public String setDate(String date, int i, int noToAdd){
 
