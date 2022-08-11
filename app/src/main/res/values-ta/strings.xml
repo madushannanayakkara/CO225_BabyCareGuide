@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BabyCareGuide</string>
+    <string name="hc_name">முதல்பெயர் கடைசிப்பெயர்</string>
+
+    <string name="col0">முடிந்தது</string>
+    <string name="col1">வயது</string>
+    <string name="col2">தடுப்பூசி</string>
+    <string name="col3">குறிப்புகள்</string>
+
+    <string name="r12">முதல் ஆண்டில்</string>
+
+    <string name="r2c1">0\-4 வாரங்கள்</string>
+    <string name="r2c2">BCG</string>
+    <string name="r2c3">மருத்துவமனையை விட்டு வெளியேறும் முன், பிறந்த 24 மணி நேரத்திற்குள் சிறந்தது. வடு இல்லை என்றால் 6 மாதங்களுக்குப் பிறகு, 5 வருடங்கள் வரை 2வது டோஸ் கொடுக்கலாம்.</string>
+
+    <string name="r3c1">2வது மாதம்</string>
+    <string name="r3c2">OPV மற்றும் பெண்டாவலன்ட் (DTP\-HepB\-Hib)(1வது டோஸ்),fIPV (பிராக்ஷனல் IPV) (1வது டோஸ்)</string>
+    <string name="r3c3">தவறானவர்களுக்கு அல்லது நோய்த்தடுப்பு இல்லாத குழந்தைக்கு மருந்துகளுக்கு இடையே குறைந்தபட்சம் 6\-8 வார இடைவெளி போதுமானது</string>
+
+    <string name="r4c1">4வது மாதம்</string>
+    <string name="r4c2">OPV மற்றும் பெண்டாவலன்ட் (DTP\-HepB\-Hib)(2வது டோஸ்),fIPV (பிராக்ஷனல் IPV) (2வது டோஸ்)</string>
+    <string name="r4c3">முன்னுரிமை 6\-8 வாரங்களுக்கு பிறகு முதல் டோஸ்</string>
+
+    <string name="r5c1">6வது மாதம்</string>
+    <string name="r5c2">OPV மற்றும் Pentavalent (DTP\-HepB\-Hib) (3வது டோஸ்)</string>
+    <string name="r5c3">இரண்டாவது டோஸுக்குப் பிறகு 6\-8 வாரங்களுக்கு முன்னுரிமை</string>
+
+    <string name="r6c1">9வது மாதம்</string>
+    <string name="r6c2">MMR (1வது டோஸ்)</string>
+    <string name="r6c3">9 மாதங்கள் முடிந்தவுடன்</string>
+
+    <string name="r22">இரண்டாம் ஆண்டில்</string>
+
+    <string name="r7c1">12 மாதங்களில்</string>
+    <string name="r7c2">நேரடி JE தடுப்பூசியின் ஒரு டோஸ்</string>
+    <string name="r7c3">1வது வருடம் முடிந்ததும்</string>
+
+    <string name="r8c1">18 மாதங்களில்</string>
+    <string name="r8c2">OPV மற்றும் DTP (4வது டோஸ்)</string>
+    <string name="r8c3">18வது மாதம் முடிந்தவுடன்</string>
+
+    <string name="r32">PRE SCHOOL போகும் வயது</string>
+
+    <string name="r9c1">3 ஆண்டுகளில்</string>
+    <string name="r9c2">MMR (2வது டோஸ்)</string>
+    <string name="r9c3">3வது வருடம் முடிந்தவுடன்</string>
+
+    <string name="r42">பள்ளிக்கு செல்லும் வயது</string>
+
+    <string name="r10c1">3 ஆண்டுகளில்</string>
+    <string name="r10c2">MMR (2வது டோஸ்)</string>
+    <string name="r10c3">3வது வருடம் முடிந்தவுடன்</string>
+
+    <string name="r11c1">5 ஆண்டுகளில்</string>
+    <string name="r11c2">OPV மற்றும் DT (5வது டோஸ்)</string>
+    <string name="r11c3">5வது ஆண்டு நிறைவடைந்ததும்</string>
+
+    <string name="dateHint">DD/MM/YY</string>
+
+    <string name="nextDay">அடுத்த தடுப்பூசி தேதி</string>
+    <string name="vacname">கடைசி தடுப்பூசி பெயர்</string>
+    <string name="button">கணக்கிடு</string>
+
+    <string name="remider">நினைவூட்டல் காலம்</string>
+    <string name="notification">அறிவிப்பு</string>
+    <string name="save">மாற்றங்களைச் சேமி</string>
+
+    <string-array name="timePeriods">
+        <item>3 மணிநேரம்</item>
+        <item>1 நாள்</item>
+        <item>2 நாட்கள்</item>
+        <item>3 நாட்கள்</item>
+        <item>1 வாரம்</item>
+        <item>ஒருபோதும் இல்லை</item>
+    </string-array>
+
+    <string name="welcome">வரவேற்பு</string>
+    <string name="babycareguide">BabyCareGuide</string>
+
+    <string name="details">விவரங்கள்</string>
+    <string name="vaccination">தடுப்பூசி</string>
+    <string name="bmi">BMI</string>
+    <string name="settings">அமைப்புகள்</string>
+    <string name="account">கணக்கு</string>
+    <string name="Home">வீடு</string>
+
+    <!--Details sheet-->
+    <string name="babydetails">குழந்தையின் விவரங்கள்</string>
+    <string name="firstname">முதல் பெயர்</string>
+    <string name="lastname">கடைசி பெயர்</string>
+    <string name="birthdate">பிறந்த தேதி</string>
+    <string name="gender">பாலினம்</string>
+    <string name="birthweight">பிறப்பு எடை</string>
+    <string name="currentweight">தற்போதைய எடை</string>
+    <string name="currentheight">தற்போதைய உயரம்</string>
+    <string name="guardiandetails">பாதுகாவலரின் விவரங்கள்</string>
+    <string name="nic">NIC</string>
+    <string name="address">முகவரி</string>
+    <string name="noofchildren">குழந்தைகளின் எண்ணிக்கை</string>
+    <string name="updatedetails">விவரங்களைப் புதுப்பிக்கவும்</string>
+
+    <!--BMI sheet-->
+    <string name="heightcm">உயரம்(cm)</string>
+    <string name="enterecurrentheight">தற்போதைய உயரத்தை உள்ளிடவும்</string>
+    <string name="weightKg">எடை(kg)</string>
+    <string name="entercurrentweight">தற்போதைய எடையை உள்ளிடவும்</string>
+    <string name="bmivalue">BMI மதிப்பு</string>
+    <string name="withinstd">நிலையான விகிதத்தில் அல்லது இல்லை</string>
+    <string name="calculate">கணக்கிடு</string>
+
+    <string name="addaccount">கணக்கைச் சேர்</string>
+    <string name="youraccounts">உங்கள் கணக்குகள்</string>
+</resources>
