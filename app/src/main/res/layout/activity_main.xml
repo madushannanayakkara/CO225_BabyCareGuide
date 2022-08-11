@@ -46,8 +46,8 @@
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
-                android:layout_centerInParent="true">
+                android:layout_centerInParent="true"
+                android:layout_marginTop="100dp">
 
                 <Button
                     android:id="@+id/btnDetails"
@@ -91,42 +91,42 @@
                     android:id="@+id/btnSettings"
                     android:layout_width="170dp"
                     android:layout_height="200dp"
-                    android:text="Settings"
-                    android:textAllCaps="false"
-                    tools:layout_editor_absoluteX="236dp"
-                    tools:layout_editor_absoluteY="411dp"
                     android:layout_below="@+id/btnVaccination"
-                    android:layout_toRightOf="@+id/btnDetails"
                     android:layout_marginTop="15dp"
+                    android:layout_toRightOf="@+id/btnDetails"
                     android:background="@drawable/button_shape"
                     android:backgroundTint="#bf77f6"
-                    android:textColor="#ffffff"
-                    android:textSize="22dp"
-                    android:fontFamily="@font/anton"
-                    android:textFontWeight="900"
                     android:drawableTop="@drawable/ic_settings"
+                    android:fontFamily="@font/anton"
                     android:paddingTop="20dp"
-                    android:paddingBottom="30dp"/>
+                    android:paddingBottom="30dp"
+                    android:text="Settings"
+                    android:textAllCaps="false"
+                    android:textColor="#ffffff"
+                    android:textFontWeight="900"
+                    android:textSize="22dp"
+                    tools:layout_editor_absoluteX="236dp"
+                    tools:layout_editor_absoluteY="411dp" />
 
                 <Button
                     android:id="@+id/btnBmi"
                     android:layout_width="170dp"
                     android:layout_height="200dp"
-                    android:text="BMI"
-                    android:textAllCaps="false"
-                    tools:layout_editor_absoluteX="52dp"
-                    tools:layout_editor_absoluteY="411dp"
                     android:layout_below="@+id/btnDetails"
                     android:layout_marginTop="15dp"
                     android:background="@drawable/button_shape"
                     android:backgroundTint="#1E90FF"
-                    android:textColor="#ffffff"
-                    android:textSize="22dp"
-                    android:fontFamily="@font/anton"
-                    android:textFontWeight="900"
                     android:drawableTop="@drawable/ic_bmi"
+                    android:fontFamily="@font/anton"
                     android:paddingTop="20dp"
-                    android:paddingBottom="30dp" />
+                    android:paddingBottom="30dp"
+                    android:text="BMI"
+                    android:textAllCaps="false"
+                    android:textColor="#ffffff"
+                    android:textFontWeight="900"
+                    android:textSize="22dp"
+                    tools:layout_editor_absoluteX="52dp"
+                    tools:layout_editor_absoluteY="411dp" />
             </RelativeLayout>
 
         </RelativeLayout>
