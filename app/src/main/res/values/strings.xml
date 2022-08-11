@@ -90,9 +90,9 @@
     <string name="lastname">Last Name</string>
     <string name="birthdate">Birth Date</string>
     <string name="gender">Gender</string>
-    <string name="birthweight">Birth Weight</string>
-    <string name="currentweight">Current Weight</string>
-    <string name="currentheight">Current Height</string>
+    <string name="birthweight">Birth Weight(kg)</string>
+    <string name="currentweight">Current Weight(kg)</string>
+    <string name="currentheight">Current Height(cm)</string>
     <string name="guardiandetails">Guardian Details</string>
     <string name="nic">NIC</string>
     <string name="address">Address</string>
@@ -110,8 +110,22 @@
 
     <string name="addaccount">Add Account</string>
     <string name="youraccounts">Your Accounts</string>
-<!--    <string name="babydetails">Baby Details</string>-->
-<!--    <string name="babydetails">Baby Details</string>-->
+
+
+    <!--Registration form sheet-->
+    <string name="welcomestate">Welcome to the Baby Development Tracking System</string>
+    <string name="registrationform">Registration Form</string>
+<!--    <string name="firstname">First Name</string>-->
+<!--    <string name="lastname">Last Name</string>-->
+    <string name="birthdateformat">Birth Date(2000-02-02)</string>
+<!--    <string name="gender"> Gender</string>-->
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+<!--    <string name="currentweight">Current Weight</string>-->
+<!--    <string name="currentheight">Current Height</string>-->
+    <string name="register">Register</string>
+<!--    <string name="male">Male</string>-->
+
 
 
 
