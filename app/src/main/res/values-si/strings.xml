@@ -91,9 +91,9 @@
     <string name="lastname">අවසන් නම</string>
     <string name="birthdate">උපන් දිනය</string>
     <string name="gender">ලිංගභේදය</string>
-    <string name="birthweight">උපත් බර</string>
-    <string name="currentweight">වත්මන් බර</string>
-    <string name="currentheight">වත්මන් උස</string>
+    <string name="birthweight">උපත් බර(kg)</string>
+    <string name="currentweight">වත්මන් බර(kg)</string>
+    <string name="currentheight">වත්මන් උස(cm)</string>
     <string name="guardiandetails">භාරකරුගේ විස්තර</string>
     <string name="nic">ජා.හැ.අ.</string>
     <string name="address">ලිපිනය</string>
@@ -111,4 +111,17 @@
 
     <string name="addaccount">ගිණුම එක් කරන්න</string>
     <string name="youraccounts">ඔබේ ගිණුම්</string>
+
+    <!--Registration form sheet-->
+    <string name="welcomestate">Baby Development Tracking System වෙත සාදරයෙන් පිළිගනිමු</string>
+    <string name="registrationform">ලියාපදිංච් පෝරමය</string>
+<!--    <string name="firstname">පළමු නම</string>-->
+<!--    <string name="lastname">අවසන් නම</string>-->
+    <string name="birthdateformat">උපන් දිනය(2000-02-02)</string>
+<!--    <string name="gender"> ස්ත්‍රී පුරුෂ භාවය</string>-->
+    <string name="male">පිරිමි</string>
+    <string name="female">ගැහැණු</string>
+<!--    <string name="currentweight">වත්මන් බර</string>-->
+<!--    <string name="currentheight">වත්මන් උස</string>-->
+    <string name="register">ලියාපදිංචි වන්න</string>
 </resources>
