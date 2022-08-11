@@ -37,6 +37,7 @@ class DatabaseH extends SQLiteOpenHelper {
     //private static final String REMARKS = "remarks";
     private static final String DONE = "done";
     private static final String USERID = "userId";
+    private static final String LAST_VCC_NO = "lastVccNo";
 
     //Column names for table4
     private static final String TIMEPERIOD = "timePeriod";
@@ -77,7 +78,8 @@ class DatabaseH extends SQLiteOpenHelper {
                 +ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 +USERID + " Integer references " + TABLE_NAME + "(" + COLUMN_ID + "),"
                 +VACCINE + " TEXT, "
-                +DONE + " TEXT);" ;
+                +DONE + " TEXT, "
+                +LAST_VCC_NO + " INTEGER);" ;
       
         //Query to add notification settings data
         String query4 = "CREATE TABLE " + TABLE4 +
@@ -118,23 +120,38 @@ class DatabaseH extends SQLiteOpenHelper {
             Toast.makeText(context, "Failed!", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(context, "Added successfully !!", Toast.LENGTH_SHORT).show();
+
+            cv.clear();
+            cv.put(VACCINE, "");
+            cv.put(USERID, findID(fname, lname));
+            cv.put(DONE, "");
+            cv.put(LAST_VCC_NO, 0);
+
+            result = db.insert(TABLE3, null, cv);
+
+            if (result == -1) {
+                db.insert(TABLE3, null, cv);
+            }
         }
     }
 
-    public void addVaccineData(String name, String done, int vaccined,int userId){
+    public void addVaccineData(String name, String done, int vaccined,int userId, int lastVccNo){
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
 
         contentValues.put(VACCINE, name);
-        contentValues.put(USERID, userId);
+//        contentValues.put(USERID, userId);
         contentValues.put(DONE, done);
+        contentValues.put(LAST_VCC_NO, lastVccNo);
 
         /* Save to the table*/
 
         if(vaccined == 0) {
-            long result = db.insert(TABLE3, null, contentValues);
+            long result = db.update(TABLE3, contentValues,  "userId = ?", new String[]{String.valueOf(userId)});
+
+//            long result = db.insert(TABLE3, null, contentValues);
 
             if (result == -1) {
                 Toast.makeText(context, "Failed!", Toast.LENGTH_SHORT).show();
@@ -143,9 +160,26 @@ class DatabaseH extends SQLiteOpenHelper {
             }
         }
         else{
-            Toast.makeText(context, "This vaccine is already given:)", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "This vaccine is already given", Toast.LENGTH_SHORT).show();
         }
 
+    }
+
+    public int readLastVaccination(int id){
+        String query = "SELECT " + LAST_VCC_NO + " FROM " + TABLE3 + " WHERE " + USERID + " = " + id;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        if(db != null){
+            Cursor cursor = db.rawQuery(query, null);
+            cursor.moveToFirst();
+
+            if(cursor.getCount() == 0){
+                return -1;
+            } else {
+                return cursor.getInt(0);
+            }
+        }
+        return -2;
     }
 
     public void addNotifyData(String timePeriod, int userID){

@@ -4,36 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
     tools:context=".startSplash">
 
-    <TextView
-        android:id="@+id/txtStartwelcome"
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        android:text="Welcome"
-        android:textColor="@color/design_default_color_primary_dark"
-        android:textSize="45dp"
-        android:textStyle="bold" />
+        android:layout_centerInParent="true">
+        <TextView
+            android:id="@+id/txtStartwelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
 
-    <TextView
-        android:id="@+id/txtStartName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txtStartwelcome"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:text="BabyCareGuide"
-        android:textColor="@color/design_default_color_primary_dark"
-        android:textSize="25dp"
-        android:textStyle="bold" />
+            android:text="Welcome"
+            android:textColor="#005bea"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:alpha="1"/>
 
-    <ImageView
-        android:id="@+id/startIcon"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_centerInParent="true"
-        android:src="@drawable/ic_start" />
+        <TextView
+            android:id="@+id/txtStartName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtStartwelcome"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="BabyCareGuide"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            android:textColor="#6a11cb"
+            android:alpha="1"/>
+
+        <ImageView
+            android:id="@+id/startIcon"
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:layout_below="@+id/txtStartName"
+            android:layout_marginTop="60dp"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/sleeping_kid" />
+    </RelativeLayout>
 
 </RelativeLayout>
