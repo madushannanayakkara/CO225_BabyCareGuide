@@ -27,7 +27,7 @@ public class startSplash extends AppCompatActivity {
         Animation fadeout = new AlphaAnimation(1,0);
         fadeout.setInterpolator(new AccelerateInterpolator());
         fadeout.setStartOffset(500);
-        fadeout.setDuration(1800);
+        fadeout.setDuration(5400);
 
         ImageView image = findViewById(R.id.startIcon);
         image.setAnimation(fadeout);
