@@ -10,10 +10,10 @@ _BabyCareGuide can be used to,_
 * View details about the baby
 * Check the BMI value of the baby
 * View the vaccination schedule
-* Get notifications in vaccination days<br>
+* Get notifications in vaccination days<br><br>
 
-#GROUP MEMBERS
+### GROUP MEMBERS
 
-E/18/058	-	De Alwis K.K.M.
-E/18/156	-	Jayathilake W.A.T.N.
-E/18/264	-	Prasanna N.W.G.L.M.
+E/18/058	-	De Alwis K.K.M.<br>
+E/18/156	-	Jayathilake W.A.T.N.<br>
+E/18/264	-	Prasanna N.W.G.L.M.<br>
