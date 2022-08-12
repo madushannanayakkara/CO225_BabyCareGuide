@@ -95,7 +95,7 @@ public class settings extends AppCompatActivity implements AdapterView.OnItemSel
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                         calendar.set(Calendar.YEAR, year);
-                        calendar.set(Calendar.MONTH, month);
+                        calendar.set(Calendar.MONTH, month + 1);
                         calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
 
                         String theDate = calendar.get(Calendar.YEAR)+ "/" +calendar.get(Calendar.MONTH) + "/" + calendar.get(Calendar.DAY_OF_MONTH)  ;
