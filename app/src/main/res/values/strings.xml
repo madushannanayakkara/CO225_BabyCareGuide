@@ -63,7 +63,7 @@
 
     <string name="remider">Reminder period</string>
     <string name="notification">Notification</string>
-    <string name="save">Save Changes</string>
+    <string name="save">Set notification</string>
 
     <string-array name="timePeriods">
         <item>3 hours</item>
@@ -80,7 +80,7 @@
     <string name="details">Details</string>
     <string name="vaccination">Vaccination</string>
     <string name="bmi">BMI</string>
-    <string name="settings">Settings</string>
+    <string name="settings">Notification</string>
     <string name="account">Account</string>
     <string name="Home">Home</string>
 
