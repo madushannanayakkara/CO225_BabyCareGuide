@@ -91,9 +91,9 @@
     <string name="lastname">கடைசி பெயர்</string>
     <string name="birthdate">பிறந்த தேதி</string>
     <string name="gender">பாலினம்</string>
-    <string name="birthweight">பிறப்பு எடை</string>
-    <string name="currentweight">தற்போதைய எடை</string>
-    <string name="currentheight">தற்போதைய உயரம்</string>
+    <string name="birthweight">பிறப்பு எடை(kg)</string>
+    <string name="currentweight">தற்போதைய எடை(kg)</string>
+    <string name="currentheight">தற்போதைய உயரம்(cm)</string>
     <string name="guardiandetails">பாதுகாவலரின் விவரங்கள்</string>
     <string name="nic">NIC</string>
     <string name="address">முகவரி</string>
@@ -111,4 +111,17 @@
 
     <string name="addaccount">கணக்கைச் சேர்</string>
     <string name="youraccounts">உங்கள் கணக்குகள்</string>
+
+    <!--Registration form sheet-->
+    <string name="welcomestate">குழந்தை வளர்ச்சி கண்காணிப்பு அமைப்புக்கு வரவேற்கிறோம்</string>
+    <string name="registrationform">பதிவு படிவம்</string>
+<!--    <string name="firstname">முதல் பெயர்</string>-->
+<!--    <string name="lastname">கடைசி பெயர்</string>-->
+    <string name="birthdateformat">பிறந்த தேதி(2000-02-02)</string>
+<!--    <string name="gender">பாலினம்</string>-->
+    <string name="male">ஆண்</string>
+    <string name="female">பெண்</string>
+<!--    <string name="currentweight">தற்போதைய எடை</string>-->
+<!--    <string name="currentheight">Current Height</string>-->
+    <string name="register">பதிவு செய்</string>
 </resources>
