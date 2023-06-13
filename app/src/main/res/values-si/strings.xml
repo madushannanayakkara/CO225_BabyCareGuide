@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BabyCareGuide</string>
+    <string name="hc_name">මුල් නම අවසාන නම</string>
+
+    <string name="col0">කළා</string>
+    <string name="col1">වයස</string>
+    <string name="col2">එන්නත්</string>
+    <string name="col3">අදහස්</string>
+
+    <string name="r12">පළමු වසර තුළ</string>
+
+    <string name="r2c1">සති 0\-4</string>
+    <string name="r2c2">BCG</string>
+    <string name="r2c3">රෝහලෙන් පිටවීමට පෙර, උපතින් පැය 24ක් ඇතුළත වඩාත් සුදුසුය. කැළලක් නොමැති නම්, 2 වන මාත්‍රාව මාස 6කට පසු, වසර 5ක් දක්වා පිරිනැමිය හැක.</string>
+
+    <string name="r3c1">2වන මාසය</string>
+    <string name="r3c2">OPV සහ Pentavalent (DTP\-HepB\-Hib)(1 වන මාත්‍රාව),fIPV (භාගික IPV) (1 වන මාත්‍රාව)</string>
+    <string name="r3c3">වැරදිකරුවෙකු සඳහා හෝ ප්‍රතිශක්තිකරණය නොගත් දරුවෙකු සඳහා අවම වශයෙන් සති 6\-8ක මාත්‍රාවක් අතර පරතරය ප්‍රමාණවත් වේ</string>
+
+    <string name="r4c1">4වන මාසය</string>
+    <string name="r4c2">OPV සහ Pentavalent (DTP\-HepB\-Hib)(2වන මාත්‍රාව),fIPV (භාගික IPV) (2වන මාත්‍රාව)</string>
+    <string name="r4c3">පළමු මාත්‍රාවෙන් සති 6\-8 වඩාත් සුදුසු</string>
+
+    <string name="r5c1">6 වන මාසය</string>
+    <string name="r5c2">OPV සහ Pentavalent (DTP\-HepB\-Hib) (3වන මාත්‍රාව)</string>
+    <string name="r5c3">2 වන මාත්‍රාවෙන් සති 6\-8 වඩාත් සුදුසු</string>
+
+    <string name="r6c1">9 වැනි මාසය</string>
+    <string name="r6c2">MMR (1වන මාත්‍රාව)</string>
+    <string name="r6c3">මාස 9ක් සම්පූර්ණ වූ විට</string>
+
+    <string name="r22">දෙවන වසර තුළ</string>
+
+    <string name="r7c1">මාස 12 දී</string>
+    <string name="r7c2">සජීවී JE එන්නත් මාත්‍රාවක්</string>
+    <string name="r7c3">පළමු වසර සම්පූර්ණ වූ විට</string>
+
+    <string name="r8c1">මාස 18 දී</string>
+    <string name="r8c2">OPV සහ DTP (4වන මාත්‍රාව)</string>
+    <string name="r8c3">18 වැනි මාසය සම්පූර්ණ වූ විට</string>
+
+    <string name="r32">පෙර පාසල් යන වයස</string>
+
+    <string name="r9c1">වසර 3 දී</string>
+    <string name="r9c2">MMR (2වන මාත්‍රාව)</string>
+    <string name="r9c3">3වන වසර සම්පූර්ණ වූ විට</string>
+
+    <string name="r42">පාසල යන වයස</string>
+
+    <string name="r10c1">වසර 3 දී</string>
+    <string name="r10c2">MMR (2වන මාත්‍රාව)</string>
+    <string name="r10c3">3 වන වසර සම්පූර්ණ වූ විට</string>
+
+    <string name="r11c1">අවුරුදු 5 දී</string>
+    <string name="r11c2">OPV සහ DT (5 වන මාත්‍රාව)</string>
+    <string name="r11c3">5 වන වසර සම්පූර්ණ වූ විට</string>
+
+    <string name="dateHint">DD/MM/YY</string>
+
+    <string name="nextDay">ඊළඟ එන්නත් දිනය</string>
+    <string name="vacname">අවසාන එන්නත් නම</string>
+    <string name="button">ගණනය කරන්න</string>
+
+    <string name="remider">සිහිකැඳවීම් කාලය</string>
+    <string name="notification">දැනුම්දීම</string>
+    <string name="save">වෙනස්කම් සුරකින්න</string>
+
+    <string-array name="timePeriods">
+        <item>පැය 3</item>
+        <item>දින 1</item>
+        <item>දින 2</item>
+        <item>දින 3</item>
+        <item>සති 1</item>
+        <item>කවදාවත් නැත</item>
+    </string-array>
+
+    <string name="welcome">සාදරයෙන් පිළිගනිමු</string>
+    <string name="babycareguide">BabyCareGuide</string>
+
+    <string name="details">විස්තර</string>
+    <string name="vaccination">එන්නත් කිරීම</string>
+    <string name="bmi">BMI</string>
+    <string name="settings">සැකසුම්</string>
+    <string name="account">ගිණුම</string>
+    <string name="Home">නිවස</string>
+
+    <!--Details sheet-->
+    <string name="babydetails">ළදරුවාගේ විස්තර</string>
+    <string name="firstname">පළමු නම</string>
+    <string name="lastname">අවසන් නම</string>
+    <string name="birthdate">උපන් දිනය</string>
+    <string name="gender">ලිංගභේදය</string>
+    <string name="birthweight">උපත් බර(kg)</string>
+    <string name="currentweight">වත්මන් බර(kg)</string>
+    <string name="currentheight">වත්මන් උස(cm)</string>
+    <string name="guardiandetails">භාරකරුගේ විස්තර</string>
+    <string name="nic">ජා.හැ.අ.</string>
+    <string name="address">ලිපිනය</string>
+    <string name="noofchildren">දරුවන් ගණන</string>
+    <string name="updatedetails">විස්තර යාවත්කාලීන කරන්න</string>
+
+    <!--BMI sheet-->
+    <string name="heightcm">උස(cm)</string>
+    <string name="enterecurrentheight">වත්මන් උස ඇතුලත් කරන්න</string>
+    <string name="weightKg">බර(kg)</string>
+    <string name="entercurrentweight">වත්මන් බර ඇතුලත් කරන්න</string>
+    <string name="bmivalue">BMI අගය</string>
+    <string name="withinstd">සම්මත අගය තුළ හෝ නැත</string>
+    <string name="calculate">ගණනය කරන්න</string>
+
+    <string name="addaccount">ගිණුම එක් කරන්න</string>
+    <string name="youraccounts">ඔබේ ගිණුම්</string>
+
+    <!--Registration form sheet-->
+    <string name="welcomestate">Baby Development Tracking System වෙත සාදරයෙන් පිළිගනිමු</string>
+    <string name="registrationform">ලියාපදිංච් පෝරමය</string>
+<!--    <string name="firstname">පළමු නම</string>-->
+<!--    <string name="lastname">අවසන් නම</string>-->
+    <string name="birthdateformat">උපන් දිනය(2000-02-02)</string>
+<!--    <string name="gender"> ස්ත්‍රී පුරුෂ භාවය</string>-->
+    <string name="male">පිරිමි</string>
+    <string name="female">ගැහැණු</string>
+<!--    <string name="currentweight">වත්මන් බර</string>-->
+<!--    <string name="currentheight">වත්මන් උස</string>-->
+    <string name="register">ලියාපදිංචි වන්න</string>
+</resources>

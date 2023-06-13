@@ -148,20 +148,29 @@ class DatabaseH extends SQLiteOpenHelper {
 
         /* Save to the table*/
 
-        if(vaccined == 0) {
-            long result = db.update(TABLE3, contentValues,  "userId = ?", new String[]{String.valueOf(userId)});
+        long result = db.update(TABLE3, contentValues,  "userId = ?", new String[]{String.valueOf(userId)});
 
 //            long result = db.insert(TABLE3, null, contentValues);
 
-            if (result == -1) {
-                Toast.makeText(context, "Failed!", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(context, "Added successfully !!", Toast.LENGTH_SHORT).show();
-            }
+        if (result == -1) {
+            Toast.makeText(context, "Failed!", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Added successfully !!", Toast.LENGTH_SHORT).show();
         }
-        else{
-            Toast.makeText(context, "This vaccine is already given", Toast.LENGTH_SHORT).show();
-        }
+//        if(vaccined == 0) {
+//            long result = db.update(TABLE3, contentValues,  "userId = ?", new String[]{String.valueOf(userId)});
+//
+////            long result = db.insert(TABLE3, null, contentValues);
+//
+//            if (result == -1) {
+//                Toast.makeText(context, "Failed!", Toast.LENGTH_SHORT).show();
+//            } else {
+//                Toast.makeText(context, "Added successfully !!", Toast.LENGTH_SHORT).show();
+//            }
+//        }
+//        else{
+//            Toast.makeText(context, "This vaccine is already given", Toast.LENGTH_SHORT).show();
+//        }
 
     }
 

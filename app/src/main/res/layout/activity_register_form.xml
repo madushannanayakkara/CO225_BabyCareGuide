@@ -14,10 +14,9 @@
         android:id="@+id/txtWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to the Baby Development Tracking System"
-        android:textStyle="bold|italic"
+        android:text="@string/welcomestate"
         android:textAlignment="center"
-        />
+        android:textStyle="bold|italic" />
 
     <TextView
         android:id="@+id/txtRegisterForm"
@@ -26,33 +25,33 @@
         android:layout_below="@+id/txtWelcome"
         android:layout_centerInParent="true"
         android:layout_marginTop="20dp"
-        android:text="Registration Form"
+        android:text="@string/registrationform"
         android:textSize="25dp"
         android:textStyle="bold" />
 
     <LinearLayout
+        android:id="@+id/editTextFirstNameL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
+        android:layout_below="@+id/txtRegisterForm"
         android:layout_marginTop="20dp"
         android:gravity="center_vertical"
-        android:layout_below="@+id/txtRegisterForm"
-        android:id="@+id/editTextFirstNameL">
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
 
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/ic_baseline_person"/>
+            android:src="@drawable/ic_baseline_person" />
 
         <EditText
             android:id="@+id/editTextFirstName"
-            android:layout_marginLeft="5dp"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
             android:ems="10"
-            android:hint="First Name"
+            android:hint="@string/firstname"
             android:inputType="text" />
 
     </LinearLayout>
@@ -76,10 +75,10 @@
         <EditText
             android:id="@+id/editTextLastName"
             android:layout_marginLeft="5dp"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Last Name"
+            android:hint="@string/lastname"
             android:inputType="text"
              />
 
@@ -103,10 +102,10 @@
 
     <EditText
         android:id="@+id/editTextBirthDate"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
-        android:hint="Birth Date"
+        android:hint="@string/birthdateformat"
         android:inputType="text" />
 
     </LinearLayout>
@@ -127,15 +126,6 @@
             android:layout_height="30dp"
             android:src="@drawable/ic_baseline_wc"/>
 
-        <TextView
-            android:id="@+id/txtGender"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text=" Gender"
-            android:textSize="18dp" />
-
-
 
         <RadioGroup
             android:layout_width="wrap_content"
@@ -149,7 +139,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/rbMale"
-                android:text="Male"
+                android:text="@string/male"
                 android:checked="true"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="30dp"/>
@@ -158,7 +148,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/rbFemale"
-                android:text="Female"
+                android:text="@string/female"
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="5dp"/>
         </RadioGroup>
@@ -171,18 +161,17 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/radioGroupL"
         android:layout_marginTop="18dp"
-        android:hint="Current Weight"
+        android:hint="@string/currentweight"
         android:inputType="text" />
 
     <EditText
+        android:id="@+id/editTextCurrentHeight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Current Height"
-        android:layout_marginTop="8dp"
-        android:id="@+id/editTextCurrentHeight"
-        android:inputType="text"
         android:layout_below="@+id/editTextCurrentWeight"
-        />
+        android:layout_marginTop="8dp"
+        android:hint="@string/currentheight"
+        android:inputType="text" />
 
     <LinearLayout
         android:id="@+id/buttonRegisterL"
@@ -195,17 +184,18 @@
 
         <Button
             android:id="@+id/buttonRegister"
-            android:layout_width="150dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/editTextCurrentHeight"
             android:layout_marginTop="8dp"
             android:background="@drawable/bg_btn"
+            android:backgroundTint="@color/purple_200"
             android:drawableLeft="@drawable/ic_baseline_how_to_reg"
             android:paddingLeft="20dp"
-            android:text="Register"
+            android:paddingRight="20dp"
+            android:text="@string/register"
             android:textColor="@color/black"
-            android:textSize="15dp"
-            android:backgroundTint="@color/purple_200"/>
+            android:textSize="15dp" />
     </LinearLayout>
     <TextView
         android:id="@+id/btnRequired"

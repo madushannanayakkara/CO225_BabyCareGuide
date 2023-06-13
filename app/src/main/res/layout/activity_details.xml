@@ -31,7 +31,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingBottom="20dp"
-                    android:text="Baby Details"
+                    android:text="@string/babydetails"
                     android:textAlignment="center"
                     android:textColor="@android:color/white"
                     android:textSize="25sp"
@@ -61,7 +61,7 @@
                     android:layout_marginRight="15dp"
                     android:gravity="left"
                     android:paddingTop="10dp"
-                    android:text="First Name"
+                    android:text="@string/firstname"
                     android:textColor="#c9f9ff"
                     android:textSize="15sp" />
                 <!--            android:background="@color/black"-->
@@ -92,7 +92,7 @@
                     android:layout_marginRight="15dp"
                     android:gravity="left"
                     android:paddingTop="10dp"
-                    android:text="Last Name"
+                    android:text="@string/lastname"
                     android:textColor="#c9f9ff"
                     android:textSize="15sp" />
 
@@ -123,7 +123,7 @@
                     android:layout_marginRight="15dp"
                     android:gravity="left"
                     android:paddingTop="10dp"
-                    android:text="Birth Date"
+                    android:text="@string/birthdate"
                     android:textColor="#c9f9ff"
                     android:textSize="15sp" />
 
@@ -136,6 +136,7 @@
                     android:gravity="left"
                     android:inputType="text"
                     android:minHeight="48dp"
+                    android:hint="@string/birthdateformat"
                     android:textColor="#c9f9ff" />
 
             </LinearLayout>
@@ -154,7 +155,7 @@
                     android:layout_marginRight="15dp"
                     android:gravity="left"
                     android:paddingTop="10dp"
-                    android:text="Gender"
+                    android:text="@string/gender"
                     android:textColor="#c9f9ff"
                     android:textSize="15sp" />
 
@@ -185,7 +186,7 @@
                     android:layout_marginRight="15dp"
                     android:gravity="left"
                     android:paddingTop="10dp"
-                    android:text="Birth Weight"
+                    android:text="@string/birthweight"
                     android:textColor="#c9f9ff"
                     android:textSize="15sp" />
 
@@ -196,7 +197,7 @@
                     android:layout_gravity="center"
                     android:backgroundTint="@android:color/darker_gray"
                     android:gravity="left"
-                    android:inputType="number"
+                    android:inputType="text"
                     android:minHeight="48dp"
                     android:textColor="#c9f9ff" />
 
@@ -217,7 +218,7 @@
                     android:layout_marginRight="15dp"
                     android:gravity="left"
                     android:paddingTop="10dp"
-                    android:text="Current Weight"
+                    android:text="@string/currentweight"
                     android:textColor="#c9f9ff"
                     android:textSize="15sp" />
 
@@ -228,7 +229,7 @@
                     android:layout_gravity="center"
                     android:backgroundTint="@android:color/darker_gray"
                     android:gravity="left"
-                    android:inputType="number"
+                    android:inputType="text"
                     android:minHeight="48dp"
                     android:textColor="#c9f9ff" />
 
@@ -248,7 +249,7 @@
                     android:layout_marginRight="15dp"
                     android:gravity="left"
                     android:paddingTop="10dp"
-                    android:text="Current Height"
+                    android:text="@string/currentheight"
                     android:textColor="#c9f9ff"
                     android:textSize="15sp" />
 
@@ -259,7 +260,7 @@
                     android:layout_gravity="center"
                     android:backgroundTint="@android:color/darker_gray"
                     android:gravity="left"
-                    android:inputType="number"
+                    android:inputType="text"
                     android:minHeight="48dp"
                     android:textColor="#c9f9ff" />
 
@@ -278,7 +279,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="55dp"
                     android:paddingBottom="20dp"
-                    android:text="Guardian Details"
+                    android:text="@string/guardiandetails"
                     android:textAlignment="center"
                     android:textColor="@android:color/white"
                     android:textSize="25sp"
@@ -307,7 +308,7 @@
                     android:layout_marginRight="15dp"
                     android:gravity="left"
                     android:paddingTop="10dp"
-                    android:text="First Name"
+                    android:text="@string/firstname"
                     android:textColor="#c9f9ff"
                     android:textSize="15sp" />
 
@@ -338,7 +339,7 @@
                     android:layout_marginRight="15dp"
                     android:gravity="left"
                     android:paddingTop="10dp"
-                    android:text="Last Name"
+                    android:text="@string/lastname"
                     android:textColor="#c9f9ff"
                     android:textSize="15sp" />
 
@@ -369,7 +370,7 @@
                     android:layout_marginRight="15dp"
                     android:gravity="left"
                     android:paddingTop="10dp"
-                    android:text="Birth Date"
+                    android:text="@string/birthdate"
                     android:textColor="#c9f9ff"
                     android:textSize="15sp" />
 
@@ -381,6 +382,7 @@
                     android:backgroundTint="@android:color/darker_gray"
                     android:gravity="left"
                     android:inputType="text"
+                    android:hint="@string/birthdateformat"
                     android:textColor="#c9f9ff" />
 
             </LinearLayout>
@@ -399,7 +401,7 @@
                     android:layout_marginRight="15dp"
                     android:gravity="left"
                     android:paddingTop="10dp"
-                    android:text="NIC"
+                    android:text="@string/nic"
                     android:textColor="#c9f9ff"
                     android:textSize="15sp" />
 
@@ -429,7 +431,7 @@
                     android:layout_marginRight="15dp"
                     android:gravity="left"
                     android:paddingTop="10dp"
-                    android:text="Address"
+                    android:text="@string/address"
                     android:textColor="#c9f9ff"
                     android:textSize="15sp" />
 
@@ -459,7 +461,7 @@
                     android:layout_marginRight="15dp"
                     android:gravity="left"
                     android:paddingTop="10dp"
-                    android:text="No of Children"
+                    android:text="@string/noofchildren"
                     android:textColor="#c9f9ff"
                     android:textSize="15sp" />
 
@@ -491,7 +493,7 @@
                     android:drawableLeft="@drawable/ic_baseline_edit"
                     android:gravity="center"
                     android:paddingLeft="20dp"
-                    android:text="Update details"
+                    android:text="@string/updatedetails"
                     android:textColor="@color/purple_200"
                     android:textSize="15dp"
                     android:textStyle="italic|bold" />

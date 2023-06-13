@@ -94,6 +94,13 @@ public class Vaccination extends AppCompatActivity  {
 
         /*String d1 = "2017.01.02";*/
 
+        int id = databaseH.readLastSavedID();
+        if (id > 0){
+            for (int j=0; j<databaseH.readLastVaccination(id); j++) {
+                cb_arr[j].setChecked(true);
+            }
+        }
+
         for (int i=0; i<9; i++){
             cb_arr[i].setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
@@ -106,13 +113,6 @@ public class Vaccination extends AppCompatActivity  {
                     }
                 }
             });
-        }
-
-        int id = databaseH.readLastSavedID();
-        if (id > 0){
-            for (int j=0; j<databaseH.readLastVaccination(id); j++) {
-                cb_arr[j].setChecked(true);
-            }
         }
 
         setNextVaccDate();

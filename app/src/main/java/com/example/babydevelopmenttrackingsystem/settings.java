@@ -6,28 +6,41 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.app.AlarmManager;
+import android.app.DatePickerDialog;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.format.DateFormat;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 public class settings extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private BottomNavigationView bottomNav;
-    private Button saveChanges;
+    private Button selectTimeBtn;
+    private Button selectedDate;
+    private Button selectedTime;
     private Spinner spinner;
     private String text;
     private DatabaseH databaseH;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +50,11 @@ public class settings extends AppCompatActivity implements AdapterView.OnItemSel
 
         bottomNav = findViewById(R.id.bottom_navigator);
         bottomNav.setSelectedItemId(R.id.nav_settings);
+        selectTimeBtn = findViewById(R.id.selectTimeBtn);
+        selectedDate = findViewById(R.id.selectedDate);
+        selectedTime = findViewById(R.id.selectedTime);
+        Calendar calendar = Calendar.getInstance();
+
 
         databaseH = new DatabaseH(settings.this);
 
@@ -68,43 +86,122 @@ public class settings extends AppCompatActivity implements AdapterView.OnItemSel
             }
         });
 
-        spinner = findViewById(R.id.spinner1);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.timePeriods, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
 
-        saveChanges = findViewById(R.id.saveChanges);
 
-        saveChanges.setOnClickListener(new View.OnClickListener() {
+        selectedDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        calendar.set(Calendar.YEAR, year);
+                        calendar.set(Calendar.MONTH, month + 1);
+                        calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
 
-                Toast.makeText(settings.this, "Reminder set", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(settings.this, ReminderBroadcast.class);
-                @SuppressLint("UnspecifiedImmutableFlag") PendingIntent pendingIntent = PendingIntent.getBroadcast(settings.this,0,intent,0);
+                        String theDate = calendar.get(Calendar.YEAR)+ "/" +calendar.get(Calendar.MONTH) + "/" + calendar.get(Calendar.DAY_OF_MONTH)  ;
 
-                AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+                        selectedDate.setText(theDate);
+                    }
 
-                long timeAtButtonOnClick = System.currentTimeMillis();
 
-                long tenSecondsInMillis = 1000 * 10;
+                };
 
-                alarmManager.set(AlarmManager.RTC_WAKEUP, timeAtButtonOnClick+tenSecondsInMillis, pendingIntent);
+                new DatePickerDialog(settings.this,dateSetListener,calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH)).show();
 
-                int id = databaseH.readLastSavedID();
-                text = spinner.getSelectedItem().toString();
-                databaseH.addNotifyData(text,id);
 
             }
+        });
+         selectedTime.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 TimePickerDialog.OnTimeSetListener timeSetListener=new TimePickerDialog.OnTimeSetListener() {
+                     @Override
+                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                         calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
+                         calendar.set(Calendar.MINUTE, minute);
+                         calendar.set(Calendar.SECOND, 0);
+                         calendar.set(Calendar.MILLISECOND, 0);
 
+                         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yy-MM-dd HH:mm");
+
+
+                         String theTime = calendar.get(Calendar.HOUR_OF_DAY)+ ":" +calendar.get(Calendar.MINUTE);
+
+
+                         selectedTime.setText(theTime);
+                     }
+                 };
+                 new TimePickerDialog(settings.this,timeSetListener,calendar.get(Calendar.HOUR_OF_DAY),calendar.get(Calendar.MINUTE),false).show();
+             }
+         });
+
+
+        selectTimeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(settings.this, "Notification set", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(settings.this, ReminderBroadcast.class);
+                @SuppressLint("UnspecifiedImmutableFlag") PendingIntent pendingIntent = PendingIntent.getBroadcast(settings.this, 0, intent, 0);
+                AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+                alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+            }
         });
 
-
-
-
-
-    }
+//        selectTimeBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Calendar calendar = Calendar.getInstance();
+//
+//                DatePickerDialog.OnDateSetListener dateSetListener=new DatePickerDialog.OnDateSetListener() {
+//                    @Override
+//                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+//                        calendar.set(Calendar.YEAR,year);
+//                        calendar.set(Calendar.MONTH,month);
+//                        calendar.set(Calendar.DAY_OF_MONTH,dayOfMonth);
+//
+//                        TimePickerDialog.OnTimeSetListener timeSetListener=new TimePickerDialog.OnTimeSetListener() {
+//                            @Override
+//                            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+//                                calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
+//                                calendar.set(Calendar.MINUTE, minute);
+//                                calendar.set(Calendar.SECOND, 0);
+//                                calendar.set(Calendar.MILLISECOND, 0);
+//
+//                                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yy-MM-dd HH:mm");
+//
+//                                //date_time_in.setText(simpleDateFormat.format(calendar.getTime()));
+//
+//
+//                                Toast.makeText(settings.this, "Reminder set", Toast.LENGTH_SHORT).show();
+//                                Intent intent = new Intent(settings.this, ReminderBroadcast.class);
+//                                @SuppressLint("UnspecifiedImmutableFlag") PendingIntent pendingIntent = PendingIntent.getBroadcast(settings.this, 0, intent, 0);
+//
+//                                AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+//
+//                                //              long timeAtButtonOnClick = System.currentTimeMillis();
+//                                //
+//                                //              long tenSecondsInMillis = 1000 * 10;
+//
+//                                alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+//
+//                            }
+//                        };
+//
+//                        new TimePickerDialog(settings.this,timeSetListener,calendar.get(Calendar.HOUR_OF_DAY),calendar.get(Calendar.MINUTE),false).show();
+//                    }
+//                };
+//
+//                new DatePickerDialog(settings.this,dateSetListener,calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH)).show();
+//
+//
+//            }
+//        });
+//
+//
+//
+//
+//
+  }
 
 
     private void createNotificationChannel(){
@@ -143,6 +240,8 @@ public class settings extends AppCompatActivity implements AdapterView.OnItemSel
         startActivity(new Intent(getApplicationContext(), MainActivity.class));
         overridePendingTransition(0, 0);
     }
+
+
 
 }
 
